@@ -1121,9 +1121,6 @@ code {
 .dl-title { font-family: var(--font-head); font-size: clamp(1.2rem, 2.2vw, 1.5rem); font-weight: 800; }
 .dl-meta { font-size: 0.88rem; }
 
-@media (min-width: 820px) {
-  .download-hub { grid-template-columns: 1.35fr 0.85fr; }
-}
 
 /* ==========================================================================
    11. NHÓM THỰC HIỆN
