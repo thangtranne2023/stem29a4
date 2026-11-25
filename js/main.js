@@ -47,17 +47,17 @@ const GALLERY_ITEMS = [
   },
   {
     src: "assets/images/anh-05.jpg",
-    alt: "Nhóm 3 lớp 9A4 trình bày mô hình cấu trúc phân tử DNA hoàn chỉnh trước màn hình STEM",
-    caption: "Ảnh 05 — Nhóm 3 trình bày mô hình DNA hoàn chỉnh trước lớp 9A4."
+    alt: "Nhóm 2 lớp 9A4 trình bày mô hình cấu trúc phân tử DNA hoàn chỉnh trước màn hình STEM",
+    caption: "Ảnh 05 — Nhóm 2 trình bày mô hình DNA hoàn chỉnh trước lớp 9A4."
   },
   {
     src: "assets/images/anh-06.jpg",
-    alt: "Trang ghi chép viết tay của Nhóm 3 về ý tưởng thiết kế, vật liệu sử dụng và bảng quy ước màu sắc",
+    alt: "Trang ghi chép viết tay của Nhóm 2 về ý tưởng thiết kế, vật liệu sử dụng và bảng quy ước màu sắc",
     caption: "Ảnh 06 — Ghi chép thiết kế trang 1: Ý tưởng, vật liệu và quy ước màu base (A Đỏ, T Vàng, G Xanh biển, C Xanh lá)."
   },
   {
     src: "assets/images/anh-07.jpg",
-    alt: "Trang ghi chép viết tay của Nhóm 3 về cách tạo hình hai mạch khung và góc xoắn 30 đến 36 độ",
+    alt: "Trang ghi chép viết tay của Nhóm 2 về cách tạo hình hai mạch khung và góc xoắn 30 đến 36 độ",
     caption: "Ảnh 07 — Ghi chép thiết kế trang 2: Uốn hai dải mạch carton (1–1,5 cm) và xoay bậc 30°–36° theo chiều xoắn phải."
   }
 ];
