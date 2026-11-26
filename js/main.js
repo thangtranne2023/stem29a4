@@ -1,15 +1,11 @@
 /**
  * ============================================================================
- * MÔ HÌNH CẤU TRÚC PHÂN TỬ DNA — MAIN JAVASCRIPT (KHÔNG DÙNG ES MODULE / FETCH)
- * Tương thích mở trực tiếp file:// bằng trình duyệt.
+ * NHÓM 4 (9A4) — THIẾT KẾ MÔ HÌNH CẤU TRÚC PHÂN TỬ DNA TỪ VẬT LIỆU ĐƠN GIẢN
+ * Quy ước màu thật: A Đỏ - T Xanh dương - G Xanh lá - C Vàng
+ * Tương thích cả HTTP và mở trực tiếp file://
  * ============================================================================
  */
 
-/* ============================================================================
-   1. CẤU HÌNH BÀI THUYẾT TRÌNH (CHỈNH SỬA DỄ DÀNG TẠI ĐÂY)
-   - Dán link Google Slides / OneDrive embed vào EMBED_URL nếu muốn nhúng trực tuyến.
-   - Chỉnh số lượng / đường dẫn slide trong mảng SLIDES (tỉ lệ 16:9).
-   ============================================================================ */
 const EMBED_URL = "";
 
 const SLIDES = [
@@ -25,82 +21,103 @@ const SLIDES = [
   { src: "assets/slides/slide-10.jpg", title: "10. THANK YOU FOR WATCHING" }
 ];
 
-/* Danh sách 7 ảnh tư liệu thực tế (5 ảnh quy trình/sản phẩm + 2 ảnh ghi chép thiết kế) */
 const GALLERY_ITEMS = [
   {
     src: "assets/images/anh-01.jpg",
-    alt: "Bộ bút lông nhiều màu, que gỗ, thanh xốp trắng, cọ vẽ và màu dùng chuẩn bị làm mô hình DNA",
-    caption: "Ảnh 01 — Tập hợp bút lông màu, que gỗ, thanh xốp trắng, cọ và màu vẽ."
+    alt: "Hai học sinh Nhóm 4 cầm mô hình DNA khung nền vàng gắn chữ A T G C trước lớp 9A4",
+    caption: "Ảnh 01 — Đại diện Nhóm 4 cầm mô hình DNA khung nền vàng gắn nổi hàng chữ A T G C trước lớp 9A4.",
+    wide: true
   },
   {
     src: "assets/images/anh-02.jpg",
-    alt: "Hai học sinh đang sơn phủ mặt trong khung hộp carton tái chế và tô màu que gỗ bằng cọ vẽ",
-    caption: "Ảnh 02 — Gia công khung hộp carton tái chế và tô màu chi tiết."
+    alt: "Bốn tấm bìa màu Đỏ, Xanh dương, Vàng, Xanh lá gắn cố định trên mặt đáy carton",
+    caption: "Ảnh 02 — Bốn bảng chú thích màu (Đỏ, Xanh dương, Vàng, Xanh lá) gắn dưới mặt đế mô hình."
   },
   {
     src: "assets/images/anh-03.jpg",
-    alt: "Tay học sinh cầm bút lông màu xanh lá tô lên que gỗ để phân biệt màu các cặp base",
-    caption: "Ảnh 03 — Tô màu phân biệt que gỗ bằng bút lông acrylic."
+    alt: "Thành viên Nhóm 4 dùng súng bắn keo gắn cố định chuỗi xoắn que kem và viên đất sét trắng lên khung",
+    caption: "Ảnh 03 — Dùng súng bắn keo gắn chuỗi bậc que kem và các hạt đất sét trắng vào khung."
   },
   {
     src: "assets/images/anh-04.jpg",
-    alt: "Khung hộp carton phủ trắng mặt trong đặt cạnh bộ màu Water Color và các túi đất sét khô màu trắng",
-    caption: "Ảnh 04 — Khung hộp carton phủ trắng, bộ màu nước và đất sét khô trắng."
+    alt: "Các que kem tô hai nửa màu Đỏ-Xanh dương và Xanh lá-Vàng xoắn quanh dây kẽm cạnh hộp keo nến",
+    caption: "Ảnh 04 — Lắp xoắn các que kem hai nửa màu (Đỏ–Xanh dương và Xanh lá–Vàng) trên trục dây kẽm."
   },
   {
     src: "assets/images/anh-05.jpg",
-    alt: "Nhóm 4 lớp 9A4 trình bày mô hình cấu trúc phân tử DNA hoàn chỉnh trước màn hình STEM",
-    caption: "Ảnh 05 — Nhóm 4 trình bày mô hình DNA hoàn chỉnh trước lớp 9A4."
+    alt: "Tập thể 6 thành viên Nhóm 4 lớp 9A4 đứng trước bảng lớp cùng sản phẩm DNA hoàn thiện",
+    caption: "Ảnh 05 — Tập thể 6 thành viên Nhóm 4 chụp cùng sản phẩm hoàn chỉnh tại lớp 9A4.",
+    wide: true
   },
   {
     src: "assets/images/anh-06.jpg",
-    alt: "Trang ghi chép viết tay của Nhóm 4 về ý tưởng thiết kế, vật liệu sử dụng và bảng quy ước màu sắc",
-    caption: "Ảnh 06 — Ghi chép thiết kế trang 1: Ý tưởng, vật liệu và quy ước màu base (A Đỏ, T Vàng, G Xanh biển, C Xanh lá)."
+    alt: "Ba chữ cái D N A nặn bằng đất sét màu tự khô gắn trang trí trên nền bảng",
+    caption: "Ảnh 06 — Bộ chữ D N A nặn thủ công từ đất sét tự khô tạo điểm nhấn cho mô hình."
   },
   {
     src: "assets/images/anh-07.jpg",
-    alt: "Trang ghi chép viết tay của Nhóm 4 về cách tạo hình hai mạch khung và góc xoắn 30 đến 36 độ",
-    caption: "Ảnh 07 — Ghi chép thiết kế trang 2: Uốn hai dải mạch carton (1–1,5 cm) và xoay bậc 30°–36° theo chiều xoắn phải."
+    alt: "Học sinh chuẩn bị bìa carton, đất sét nhiều màu và hộp súng bắn keo thực hành tại nhà",
+    caption: "Ảnh 07 — Chuẩn bị thùng bìa carton, các gói đất sét màu và dụng cụ súng bắn keo."
   }
 ];
 
+/* Quy ước đúng Slide 05 của Nhóm 4 */
 const BASE_INFO = {
-  A: { full: "Adenine", complement: "T", bonds: 2, modelColor: "Đỏ", group: "Purine (lớn)" },
-  T: { full: "Thymine", complement: "A", bonds: 2, modelColor: "Vàng", group: "Pyrimidine (nhỏ)" },
-  G: { full: "Guanine", complement: "C", bonds: 3, modelColor: "Xanh dương", group: "Purine (lớn)" },
-  C: { full: "Cytosine", complement: "G", bonds: 3, modelColor: "Xanh lá", group: "Pyrimidine (nhỏ)" }
+  A: { full: "Adenine", complement: "T", bonds: 2, modelColor: "Đỏ", hex: "#EF4444" },
+  T: { full: "Thymine", complement: "A", bonds: 2, modelColor: "Xanh dương", hex: "#2563EB" },
+  G: { full: "Guanine", complement: "C", bonds: 3, modelColor: "Xanh lá", hex: "#16A34A" },
+  C: { full: "Cytosine", complement: "G", bonds: 3, modelColor: "Vàng", hex: "#EAB308" }
 };
 
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (id) => document.getElementById(id);
 
-/* Tiện ích debounce dùng cho sự kiện resize */
-function debounce(fn, delay = 150) {
-  let timer = null;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
+function el(tag, props = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") node.className = v;
+    else if (k === "text") node.textContent = v;
+    else node.setAttribute(k, v);
+  }
+  if (children.length) node.append(...children);
+  return node;
 }
 
-/* ============================================================================
-   2. KHỞI CHẠY KHI DOM SẴN SÀNG
-   ============================================================================ */
+const spriteCache = new Map();
+function getSprite(hex) {
+  if (spriteCache.has(hex)) return spriteCache.get(hex);
+  const size = 120;
+  const c = document.createElement("canvas");
+  c.width = size;
+  c.height = size;
+  const gctx = c.getContext("2d");
+  const r = size * 0.5 - 4;
+  const grad = gctx.createRadialGradient(size * 0.36, size * 0.34, r * 0.08, size * 0.5, size * 0.5, r);
+  grad.addColorStop(0, "#FFFFFF");
+  grad.addColorStop(0.35, hex);
+  grad.addColorStop(0.95, "#0B182E");
+  gctx.beginPath();
+  gctx.arc(size * 0.5, size * 0.5, r, 0, Math.PI * 2);
+  gctx.fillStyle = grad;
+  gctx.fill();
+  spriteCache.set(hex, c);
+  return c;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initNavigation();
-  initHeroAndEndingHelices();
+  renderGallery();
+  initHelices();
   initStructureSection();
   initPairingChallenge();
   initLightbox();
   initSlideViewer();
-  initScrollAnimations();
+  initScrollReveals();
 });
 
-/* ============================================================================
-   3. THANH ĐIỀU HƯỚNG CỐ ĐỊNH, MENU DI ĐỘNG & SCROLLSPY
-   ============================================================================ */
 function initNavigation() {
-  const toggleBtn = document.getElementById("mobile-menu-toggle");
-  const drawer = document.getElementById("mobile-nav-drawer");
+  const toggleBtn = $("mobile-menu-toggle");
+  const drawer = $("mobile-nav-drawer");
   if (toggleBtn && drawer) {
     const setOpen = (open) => {
       toggleBtn.setAttribute("aria-expanded", String(open));
@@ -119,35 +136,44 @@ function initNavigation() {
   const navLinks = document.querySelectorAll(".nav-link");
   const targets = Array.from(navLinks).map((l) => document.querySelector(l.getAttribute("href"))).filter(Boolean);
   if ("IntersectionObserver" in window && targets.length) {
-    const spy = new IntersectionObserver((entries) => {
+    const obs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const hash = `#${entry.target.id}`;
-          navLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === hash));
-        }
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        navLinks.forEach((l) => l.classList.toggle("is-active", l.getAttribute("href") === id));
       });
-    }, { rootMargin: "-35% 0px -55% 0px" });
-    targets.forEach((sec) => spy.observe(sec));
+    }, { rootMargin: "-25% 0px -60% 0px" });
+    targets.forEach((sec) => obs.observe(sec));
   }
 }
 
-/* ============================================================================
-   4. HÀM VẼ HELIX CANVAS 2D GIẢ 3D THAM SỐ HÓA (MỤC 8.1 — DÙNG LẠI CHO HERO, CẤU TRÚC, KẾT)
-   - Cặp i: θ = i*0.42 + t*ω (ω = 0.25 rad/s), x = R*cosθ, z = R*sinθ
-   - Phối cảnh: scale = f / (f + z); sắp xếp z giảm dần (xa trước, gần sau)
-   ============================================================================ */
+function renderGallery() {
+  const host = $("photo-gallery");
+  if (!host) return;
+  host.replaceChildren(...GALLERY_ITEMS.map((item, idx) => {
+    const num = String(idx + 1).padStart(2, "0");
+    const btn = el("button", { type: "button", class: "photo-trigger", "data-open-lightbox": String(idx), "aria-label": `Phóng to Ảnh ${num}: ${item.caption}` }, [
+      el("img", { src: item.src, alt: item.alt, loading: "lazy", decoding: "async" }),
+      el("span", { class: "photo-pill", text: `Ảnh ${num}` }),
+      el("span", { class: "zoom-tag", text: "Xem lớn" })
+    ]);
+    return el("figure", { class: `gal-item gs-reveal ${item.wide ? "gal-item--wide" : ""}`.trim() }, [
+      btn,
+      el("figcaption", { text: item.caption })
+    ]);
+  }));
+}
+
 function createHelixRenderer(canvas, options = {}) {
   const ctx = canvas.getContext("2d");
   if (!ctx) return null;
 
-  const sequence = options.sequence || ["A", "G", "T", "C", "A", "G", "C", "T", "G", "A", "T", "C"];
-  const omega = options.omega ?? 0.25; // rad/s
-  const focal = options.focal ?? 420;
-  const maxTiltRad = (8 * Math.PI) / 180; // Tối đa ±8°
-
+  const sequence = options.sequence || ["A", "G", "T", "C", "A", "T", "G", "C", "A", "G", "C", "T"];
+  const pairCount = options.pairCount ?? 12;
+  const omega = options.omega ?? 0.28;
+  const focal = 420;
   let width = 0;
   let height = 0;
-  let dpr = 1;
   let t = 0;
   let lastTs = 0;
   let rafId = null;
@@ -159,18 +185,13 @@ function createHelixRenderer(canvas, options = {}) {
   let tiltY = 0;
   let targetTiltX = 0;
   let targetTiltY = 0;
-  let lastProjectedPairs = [];
-
-  function getPairCount() {
-    if (typeof options.pairCount === "number") return options.pairCount;
-    return window.innerWidth < 768 ? 20 : 32;
-  }
+  let lastProjected = [];
 
   function resize() {
     const rect = canvas.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width || canvas.parentElement?.clientWidth || 320;
-    height = rect.height || canvas.parentElement?.clientHeight || 360;
+    height = rect.height || canvas.parentElement?.clientHeight || 300;
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -178,532 +199,345 @@ function createHelixRenderer(canvas, options = {}) {
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
-
-    // Mượt hóa góc nghiêng parallax ±8°
     tiltX += (targetTiltX - tiltX) * 0.08;
     tiltY += (targetTiltY - tiltY) * 0.08;
 
-    const N = getPairCount();
-    const isDesktopHero = options.layout === "hero" && width >= 900;
-    const cx = isDesktopHero ? width * 0.72 : width * 0.5;
+    const N = pairCount;
+    const cx = width * 0.5;
     const cy = height * 0.5;
-    const spanH = height * (options.heightRatio ?? 0.84);
+    const R = Math.min(width * (options.radiusRatio ?? 0.25), options.maxRadius ?? 108);
+    const maxScale = focal / Math.max(focal - R, focal * 0.58);
+    const spanH = ((height - 32) * 0.88) / maxScale;
     const gap = spanH / Math.max(N - 1, 1);
-    const R = Math.min(width * (options.radiusRatio ?? 0.16), options.maxRadius ?? 135);
-    const baseTilt = options.baseTilt ?? (isDesktopHero ? -0.18 : 0);
+    const cosTilt = Math.cos((options.baseTilt ?? 0) + tiltX);
+    const sinTilt = Math.sin((options.baseTilt ?? 0) + tiltX);
 
-    const cosTilt = Math.cos(baseTilt + tiltX);
-    const sinTilt = Math.sin(baseTilt + tiltX);
+    // Trục dây kẽm đứng ở giữa đặc trưng mô hình Nhóm 4
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - spanH * 0.52);
+    ctx.lineTo(cx, cy + spanH * 0.52);
+    ctx.strokeStyle = "rgba(250, 204, 21, 0.35)";
+    ctx.lineWidth = 2;
+    ctx.setLineDash([5, 4]);
+    ctx.stroke();
+    ctx.restore();
 
     const s1Points = [];
     const s2Points = [];
-    const items = [];
-    lastProjectedPairs = [];
+    const queue = [];
+    lastProjected = [];
 
     for (let i = 0; i < N; i++) {
-      const theta = i * 0.42 + t * omega + tiltY * 1.4;
+      const theta = i * 0.54 + t * omega + tiltY * 1.2;
       const yLocal = (i - (N - 1) * 0.5) * gap;
-
-      const x1Raw = R * Math.cos(theta);
+      const x1 = R * Math.cos(theta);
       const z1 = R * Math.sin(theta);
-      const x2Raw = -x1Raw;
+      const x2 = -x1;
       const z2 = -z1;
-
-      // Xoay nhẹ toàn trục theo parallax / góc nghiêng
-      const x1Tilt = x1Raw * cosTilt - yLocal * sinTilt;
-      const y1Tilt = x1Raw * sinTilt + yLocal * cosTilt;
-      const x2Tilt = x2Raw * cosTilt - yLocal * sinTilt;
-      const y2Tilt = x2Raw * sinTilt + yLocal * cosTilt;
 
       const s1 = focal / (focal + z1);
       const s2 = focal / (focal + z2);
-
-      const p1 = { x: cx + x1Tilt * s1, y: cy + y1Tilt * s1, z: z1, s: s1 };
-      const p2 = { x: cx + x2Tilt * s2, y: cy + y2Tilt * s2, z: z2, s: s2 };
+      const p1 = { x: cx + (x1 * cosTilt - yLocal * sinTilt) * s1, y: cy + (x1 * sinTilt + yLocal * cosTilt) * s1, z: z1, s: s1 };
+      const p2 = { x: cx + (x2 * cosTilt - yLocal * sinTilt) * s2, y: cy + (x2 * sinTilt + yLocal * cosTilt) * s2, z: z2, s: s2 };
       s1Points.push(p1);
       s2Points.push(p2);
 
       const leftCode = sequence[i % sequence.length];
       const rightCode = BASE_INFO[leftCode].complement;
       const zAvg = (z1 + z2) * 0.5;
-      const isSelected = i === activePair;
+      const selected = i === activePair;
 
-      lastProjectedPairs.push({
-        index: i,
-        leftCode,
-        rightCode,
-        x1: p1.x,
-        y1: p1.y,
-        x2: p2.x,
-        y2: p2.y,
-        midX: (p1.x + p2.x) * 0.5,
-        midY: (p1.y + p2.y) * 0.5
-      });
-
-      // Thanh ngang nối hai base (gradient cyan -> violet)
-      items.push({
-        z: zAvg + 1,
-        render: () => {
-          const depthNorm = Math.max(0.22, Math.min(1, 0.62 - zAvg / (2 * R + 1)));
-          const grad = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
-          grad.addColorStop(0, "#28D7F2");
-          grad.addColorStop(1, "#815CF5");
-
-          ctx.save();
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = isSelected ? 6 : 2.6 * ((p1.s + p2.s) * 0.5);
-          ctx.globalAlpha = isSelected ? 1 : depthNorm * 0.85;
-          if (isSelected) {
-            ctx.shadowColor = "#28D7F2";
-            ctx.shadowBlur = 16;
-          }
-          ctx.stroke();
-
-          // Chấm nhỏ biểu diễn số liên kết hydro khi cặp được chọn hoặc đang tương tác
-          if (isSelected) {
-            const bonds = BASE_INFO[leftCode].bonds;
-            const mx = (p1.x + p2.x) * 0.5;
-            const my = (p1.y + p2.y) * 0.5;
-            const dx = p2.x - p1.x;
-            const dy = p2.y - p1.y;
-            const len = Math.hypot(dx, dy) || 1;
-            const ux = dx / len;
-            const uy = dy / len;
-            const step = 9;
-            for (let b = 0; b < bonds; b++) {
-              const offset = (b - (bonds - 1) * 0.5) * step;
-              ctx.beginPath();
-              ctx.arc(mx + ux * offset, my + uy * offset, 3, 0, Math.PI * 2);
-              ctx.fillStyle = "#FFFFFF";
-              ctx.fill();
-            }
-          }
-          ctx.restore();
-        }
-      });
-
-      // Hai nút nucleotide trên hai mạch
-      items.push({
-        z: z1,
-        render: () => drawNode(p1, "#28D7F2", leftCode, isSelected, showLabels, R)
-      });
-      items.push({
-        z: z2,
-        render: () => drawNode(p2, "#815CF5", rightCode, isSelected, showLabels, R)
-      });
+      lastProjected.push({ index: i, leftCode, rightCode, x1: p1.x, y1: p1.y, x2: p2.x, y2: p2.y });
+      queue.push({ z: zAvg + 1, type: 0, p1, p2, leftCode, rightCode, selected });
+      queue.push({ z: z1, type: 1, p: p1, code: leftCode, selected });
+      queue.push({ z: z2, type: 1, p: p2, code: rightCode, selected });
     }
 
-    // Đường backbone nối các nút liên tiếp của từng mạch (vẽ phía sau nhẹ nhàng)
-    drawBackbone(s1Points, "rgba(40, 215, 242, 0.42)");
-    drawBackbone(s2Points, "rgba(129, 92, 245, 0.42)");
-
-    // Sắp xếp theo z giảm dần: xa vẽ trước, gần vẽ sau
-    items.sort((a, b) => b.z - a.z);
-    for (const item of items) item.render();
-  }
-
-  function drawBackbone(points, color) {
-    if (points.length < 2) return;
-    ctx.save();
-    ctx.beginPath();
-    ctx.moveTo(points[0].x, points[0].y);
-    for (let i = 1; i < points.length; i++) {
-      ctx.lineTo(points[i].x, points[i].y);
-    }
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2.2;
-    ctx.stroke();
-    ctx.restore();
-  }
-
-  function drawNode(p, color, label, isSelected, showLabelText, R) {
-    const depthAlpha = Math.max(0.28, Math.min(1, 0.68 - p.z / (2 * R + 1)));
-    const radius = (options.nodeRadius ?? 6.2) * p.s * (isSelected ? 1.28 : 1);
-
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-    ctx.fillStyle = color;
-    ctx.globalAlpha = isSelected ? 1 : depthAlpha;
-    if (p.z < 0 || isSelected) {
-      ctx.shadowColor = color;
-      ctx.shadowBlur = isSelected ? 18 : 10;
-    }
-    ctx.fill();
-
-    if (isSelected) {
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = "#FFFFFF";
+    const drawLine = (pts, stroke) => {
+      if (pts.length < 2) return;
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 2.4;
       ctx.stroke();
-    }
+      ctx.restore();
+    };
+    drawLine(s1Points, "rgba(248, 250, 252, 0.72)");
+    drawLine(s2Points, "rgba(147, 197, 253, 0.72)");
 
-    if (showLabelText && radius > 5.5) {
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = color === "#28D7F2" ? "#071426" : "#FFFFFF";
-      ctx.font = `700 ${Math.max(10, Math.round(radius * 0.95))}px 'Be Vietnam Pro', sans-serif`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(label, p.x, p.y + 0.5);
+    queue.sort((a, b) => b.z - a.z);
+    const baseR = options.nodeRadius ?? 8.5;
+    for (const q of queue) {
+      if (q.type === 0) {
+        const midX = (q.p1.x + q.p2.x) * 0.5;
+        const midY = (q.p1.y + q.p2.y) * 0.5;
+        const alpha = q.selected ? 1 : Math.max(0.32, Math.min(1, 0.68 - (q.z - 1) / (2 * R + 1)));
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.lineCap = "round";
+        ctx.lineWidth = (q.selected ? 7 : 4.2) * ((q.p1.s + q.p2.s) * 0.5);
+        ctx.beginPath(); ctx.moveTo(q.p1.x, q.p1.y); ctx.lineTo(midX, midY);
+        ctx.strokeStyle = BASE_INFO[q.leftCode].hex; ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(midX, midY); ctx.lineTo(q.p2.x, q.p2.y);
+        ctx.strokeStyle = BASE_INFO[q.rightCode].hex; ctx.stroke();
+        ctx.restore();
+      } else {
+        const radius = baseR * q.p.s * (q.selected ? 1.24 : 1);
+        const alpha = q.selected ? 1 : Math.max(0.38, Math.min(1, 0.75 - q.z / (2 * R + 1)));
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.drawImage(getSprite(BASE_INFO[q.code].hex), q.p.x - radius, q.p.y - radius, radius * 2, radius * 2);
+        if (q.selected) {
+          ctx.beginPath();
+          ctx.arc(q.p.x, q.p.y, radius + 1.5, 0, Math.PI * 2);
+          ctx.strokeStyle = "#FACC15";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        }
+        if (showLabels && radius > 5.2) {
+          ctx.fillStyle = "#FFFFFF";
+          ctx.font = `700 ${Math.max(10, Math.round(radius * 0.9))}px 'Be Vietnam Pro', sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText(q.code, q.p.x, q.p.y + 0.5);
+        }
+        ctx.restore();
+      }
     }
-    ctx.restore();
   }
 
   function frame(ts) {
-    if (!isVisible || document.hidden) {
-      rafId = null;
-      return;
-    }
-    if (lastTs) {
-      const dt = Math.min((ts - lastTs) / 1000, 0.05);
-      if (isPlaying) t += dt;
-    }
+    if (!lastTs) lastTs = ts;
+    const dt = Math.min(0.05, (ts - lastTs) / 1000);
     lastTs = ts;
+    if (isPlaying) t += dt;
     draw();
-    if (isPlaying || Math.abs(targetTiltX - tiltX) > 0.001 || Math.abs(targetTiltY - tiltY) > 0.001) {
-      rafId = requestAnimationFrame(frame);
-    } else {
-      rafId = null;
-    }
+    if (isVisible) rafId = requestAnimationFrame(frame);
+    else rafId = null;
   }
 
-  function ensureLoop() {
-    if (!rafId && isVisible && !document.hidden && !REDUCED_MOTION) {
-      lastTs = 0;
-      rafId = requestAnimationFrame(frame);
-    }
-  }
+  function start() { if (!rafId && isVisible) { lastTs = 0; rafId = requestAnimationFrame(frame); } }
 
-  // Theo dõi hiển thị trong viewport & chuyển tab
   if ("IntersectionObserver" in window) {
-    const obs = new IntersectionObserver((entries) => {
+    new IntersectionObserver((entries) => {
       isVisible = entries[0].isIntersecting;
-      if (isVisible) {
-        draw();
-        ensureLoop();
-      } else if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    }, { threshold: 0.05 });
-    obs.observe(canvas);
+      if (isVisible) start();
+      else if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    }, { threshold: 0.05 }).observe(canvas);
   }
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden && rafId) {
-      cancelAnimationFrame(rafId);
-      rafId = null;
-    } else if (!document.hidden && isVisible) {
-      ensureLoop();
-    }
-  });
-
-  // Parallax chuột / gyro tối đa ±8°
-  if (options.parallaxTarget && !REDUCED_MOTION) {
-    options.parallaxTarget.addEventListener("pointermove", (e) => {
-      const rect = options.parallaxTarget.getBoundingClientRect();
-      const nx = ((e.clientX - rect.left) / Math.max(rect.width, 1) - 0.5) * 2;
-      const ny = ((e.clientY - rect.top) / Math.max(rect.height, 1) - 0.5) * 2;
-      targetTiltY = Math.max(-1, Math.min(1, nx)) * maxTiltRad;
-      targetTiltX = Math.max(-1, Math.min(1, ny)) * maxTiltRad;
-      ensureLoop();
-    });
-    options.parallaxTarget.addEventListener("pointerleave", () => {
-      targetTiltX = 0;
-      targetTiltY = 0;
-    });
-  }
-
-  window.addEventListener("resize", debounce(() => {
-    resize();
-    draw();
-  }, 140));
-
+  window.addEventListener("resize", () => { resize(); draw(); });
   resize();
   draw();
-  if (!REDUCED_MOTION && isPlaying) ensureLoop();
+  if (isVisible) start();
+
+  if (options.interactiveMouse) {
+    const scope = options.hoverScope || canvas;
+    scope.addEventListener("mousemove", (e) => {
+      const r = scope.getBoundingClientRect();
+      targetTiltY = ((e.clientX - r.left) / Math.max(r.width, 1) - 0.5) * 0.28;
+      targetTiltX = ((e.clientY - r.top) / Math.max(r.height, 1) - 0.5) * 0.24;
+    });
+    scope.addEventListener("mouseleave", () => { targetTiltX = 0; targetTiltY = 0; });
+  }
 
   return {
-    setPlaying(val) {
-      isPlaying = Boolean(val) && !REDUCED_MOTION;
-      draw();
-      if (isPlaying) ensureLoop();
-    },
-    isPlaying() { return isPlaying; },
-    setShowLabels(val) {
-      showLabels = Boolean(val);
-      draw();
-    },
-    setActivePair(idx) {
-      activePair = idx;
-      draw();
-    },
-    hitTest(clientX, clientY) {
+    setPlaying(next) { isPlaying = next; if (next) start(); },
+    setShowLabels(next) { showLabels = next; draw(); },
+    setActivePair(idx) { activePair = idx; draw(); },
+    hitTest(cx, cy) {
       const rect = canvas.getBoundingClientRect();
-      const px = clientX - rect.left;
-      const py = clientY - rect.top;
+      const px = cx - rect.left;
+      const py = cy - rect.top;
       let best = null;
-      let bestDist = 34;
-      for (const p of lastProjectedPairs) {
-        const d = pointToSegDist(px, py, p.x1, p.y1, p.x2, p.y2);
-        if (d < bestDist) {
-          bestDist = d;
-          best = p;
-        }
+      let bestDist = 28;
+      for (const p of lastProjected) {
+        const dx = p.x2 - p.x1;
+        const dy = p.y2 - p.y1;
+        const lenSq = dx * dx + dy * dy;
+        const ratio = lenSq === 0 ? 0 : Math.max(0, Math.min(1, ((px - p.x1) * dx + (py - p.y1) * dy) / lenSq));
+        const d = Math.hypot(px - (p.x1 + ratio * dx), py - (p.y1 + ratio * dy));
+        if (d < bestDist) { bestDist = d; best = p; }
       }
       return best;
-    },
-    getPairs() { return lastProjectedPairs; }
+    }
   };
 }
 
-function pointToSegDist(px, py, x1, y1, x2, y2) {
-  const dx = x2 - x1;
-  const dy = y2 - y1;
-  const lenSq = dx * dx + dy * dy;
-  if (lenSq === 0) return Math.hypot(px - x1, py - y1);
-  const t = Math.max(0, Math.min(1, ((px - x1) * dx + (py - y1) * dy) / lenSq));
-  return Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy));
-}
-
-function initHeroAndEndingHelices() {
-  const heroCanvas = document.getElementById("hero-dna-canvas");
+function initHelices() {
+  const heroCanvas = $("hero-dna-canvas");
   if (heroCanvas) {
     createHelixRenderer(heroCanvas, {
-      layout: "hero",
-      omega: 0.25,
-      parallaxTarget: document.getElementById("hero")
+      pairCount: 16,
+      omega: 0.30,
+      radiusRatio: 0.27,
+      maxRadius: 102,
+      nodeRadius: 8.6,
+      showLabels: true,
+      interactiveMouse: true,
+      hoverScope: $("hero")
     });
   }
-
-  const endCanvas = document.getElementById("ending-dna-canvas");
+  const endCanvas = $("ending-dna-canvas");
   if (endCanvas) {
-    createHelixRenderer(endCanvas, {
-      pairCount: 22,
-      omega: 0.16,
-      radiusRatio: 0.18,
-      maxRadius: 150,
-      baseTilt: 0.28
-    });
+    createHelixRenderer(endCanvas, { pairCount: 16, omega: 0.16, radiusRatio: 0.18, maxRadius: 128, baseTilt: 0.32 });
   }
 }
 
-/* ============================================================================
-   5. SECTION 4: HELIX TƯƠNG TÁC + NÚT XOAY/DỪNG & HIỆN/ẨN TÊN BASE
-   ============================================================================ */
 function initStructureSection() {
-  const canvas = document.getElementById("structure-dna-canvas");
-  const playBtn = document.getElementById("helix-play-btn");
-  const labelsBtn = document.getElementById("helix-labels-btn");
-  const pillBar = document.getElementById("pair-selector-bar");
-  if (!canvas || !pillBar) return;
+  const canvas = $("structure-dna-canvas");
+  const bar = $("pair-selector-bar");
+  if (!canvas || !bar) return;
 
-  const sequence = ["A", "G", "T", "C", "A", "G", "C", "T", "A", "G", "T", "C"];
+  const sequence = ["A", "T", "G", "C", "A", "G", "C", "T", "G", "A", "T", "C"];
   let activeIndex = 0;
 
   const renderer = createHelixRenderer(canvas, {
     sequence,
     pairCount: sequence.length,
-    omega: 0.22,
-    radiusRatio: 0.24,
-    maxRadius: 118,
-    heightRatio: 0.84,
-    nodeRadius: 11,
+    omega: 0.25,
+    radiusRatio: 0.25,
+    maxRadius: 112,
+    nodeRadius: 10,
     showLabels: true,
-    activePair: 0,
-    autoPlay: true
+    activePair: 0
   });
 
-  // Tạo thanh nút chọn từng cặp base bằng bàn phím
   const pills = sequence.map((leftCode, idx) => {
-    const rightCode = BASE_INFO[leftCode].complement;
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "pair-pill";
-    btn.textContent = `#${idx + 1} ${leftCode}–${rightCode}`;
+    const btn = el("button", { type: "button", class: "pair-pill", text: `#${idx + 1} ${leftCode}–${BASE_INFO[leftCode].complement}` });
     btn.addEventListener("click", () => selectPair(idx));
-    pillBar.appendChild(btn);
+    bar.append(btn);
     return btn;
   });
 
   function selectPair(idx) {
     activeIndex = (idx + sequence.length) % sequence.length;
     renderer?.setActivePair(activeIndex);
-    pills.forEach((p, i) => p.classList.toggle("is-active", i === activeIndex));
+    pills.forEach((b, i) => b.classList.toggle("is-active", i === activeIndex));
 
     const leftCode = sequence[activeIndex];
     const info = BASE_INFO[leftCode];
     const rightCode = info.complement;
     const rightInfo = BASE_INFO[rightCode];
 
-    document.getElementById("insp-idx").textContent = `#${activeIndex + 1}`;
-    const pill = document.getElementById("insp-bond-pill");
-    pill.textContent = `${info.bonds} liên kết hydro`;
-    pill.classList.toggle("bond-pill--teal", info.bonds === 3);
+    $("insp-idx").textContent = `#${activeIndex + 1}`;
+    const bondEl = $("insp-bond-pill");
+    bondEl.textContent = `${info.bonds} liên kết hydro`;
+    bondEl.classList.toggle("is-triple", info.bonds === 3);
 
-    document.getElementById("insp-left-code").textContent = leftCode;
-    document.getElementById("insp-left-name").textContent = info.full;
-    document.getElementById("insp-right-code").textContent = rightCode;
-    document.getElementById("insp-right-name").textContent = rightInfo.full;
-    document.getElementById("insp-bonds-visual").innerHTML = Array.from({ length: info.bonds }, () => "<span></span>").join("");
-    document.getElementById("insp-title").textContent = `${info.full} (${leftCode}) – ${rightInfo.full} (${rightCode})`;
-
-    document.getElementById("insp-desc").innerHTML = info.bonds === 2
-      ? `${info.full} (${leftCode}) bắt cặp đặc hiệu với ${rightInfo.full} (${rightCode}) bằng <strong>2 liên kết hydro (A = T)</strong>, giữ đường kính chuỗi xoắn luôn ổn định (2 nm).`
-      : `${info.full} (${leftCode}) bắt cặp đặc hiệu với ${rightInfo.full} (${rightCode}) bằng <strong>3 liên kết hydro (G ≡ C)</strong> — bền vững hơn cặp A–T nhờ thêm 1 liên kết hydro.`;
-
-    document.getElementById("insp-model-color").textContent =
-      `Nửa ${info.modelColor} (${leftCode}) – Nửa ${rightInfo.modelColor} (${rightCode})`;
+    $("insp-left-code").textContent = leftCode;
+    $("insp-left-code").style.color = info.hex;
+    $("insp-left-name").textContent = info.full;
+    $("insp-right-code").textContent = rightCode;
+    $("insp-right-code").style.color = rightInfo.hex;
+    $("insp-right-name").textContent = rightInfo.full;
+    $("insp-bonds-visual").innerHTML = "<span></span>".repeat(info.bonds);
+    $("insp-title").textContent = `${info.full} (${leftCode}) – ${rightInfo.full} (${rightCode})`;
+    $("insp-desc").textContent = info.bonds === 2
+      ? `${info.full} (${leftCode}) ghép bổ sung với ${rightInfo.full} (${rightCode}) bằng 2 liên kết hydro (A = T).`
+      : `${info.full} (${leftCode}) ghép bổ sung với ${rightInfo.full} (${rightCode}) bằng 3 liên kết hydro (G ≡ C).`;
+    $("insp-model-color").textContent = `Nửa ${info.modelColor} (${leftCode}) – Nửa ${rightInfo.modelColor} (${rightCode})`;
   }
 
-  // Rê chuột / chạm vào canvas để làm sáng cặp base gần nhất
-  const handlePointer = (e) => {
+  canvas.addEventListener("click", (e) => {
     const hit = renderer?.hitTest(e.clientX, e.clientY);
     if (hit) selectPair(hit.index);
-  };
-  canvas.addEventListener("pointermove", handlePointer);
-  canvas.addEventListener("click", handlePointer);
+  });
   canvas.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-      e.preventDefault();
-      selectPair(activeIndex + 1);
-    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-      e.preventDefault();
-      selectPair(activeIndex - 1);
-    }
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); selectPair(activeIndex + 1); }
+    else if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); selectPair(activeIndex - 1); }
   });
 
+  const playBtn = $("helix-play-btn");
   if (playBtn) {
-    if (REDUCED_MOTION) {
-      playBtn.setAttribute("aria-pressed", "false");
-      playBtn.querySelector("span").textContent = "Xoay";
-    }
+    let playing = !REDUCED_MOTION;
+    playBtn.setAttribute("aria-pressed", String(playing));
+    playBtn.textContent = playing ? "Tạm dừng xoay" : "Tiếp tục xoay";
     playBtn.addEventListener("click", () => {
-      const next = playBtn.getAttribute("aria-pressed") !== "true";
-      renderer?.setPlaying(next);
-      playBtn.setAttribute("aria-pressed", String(next));
-      playBtn.querySelector("span").textContent = next ? "Dừng xoay" : "Xoay";
+      playing = !playing;
+      playBtn.setAttribute("aria-pressed", String(playing));
+      playBtn.textContent = playing ? "Tạm dừng xoay" : "Tiếp tục xoay";
+      renderer?.setPlaying(playing);
     });
   }
 
-  if (labelsBtn) {
-    labelsBtn.addEventListener("click", () => {
-      const next = labelsBtn.getAttribute("aria-pressed") !== "true";
-      renderer?.setShowLabels(next);
-      labelsBtn.setAttribute("aria-pressed", String(next));
-      labelsBtn.querySelector("span").textContent = next ? "Ẩn tên base" : "Hiện tên base";
+  const labelBtn = $("helix-labels-btn");
+  if (labelBtn) {
+    let shown = true;
+    labelBtn.addEventListener("click", () => {
+      shown = !shown;
+      labelBtn.setAttribute("aria-pressed", String(shown));
+      labelBtn.textContent = shown ? "Ẩn chữ A T G C" : "Hiện chữ A T G C";
+      renderer?.setShowLabels(shown);
     });
   }
 
   selectPair(0);
 }
 
-/* ============================================================================
-   6. WIDGET "THỬ THÁCH GHÉP CẶP" (MỤC 8.2)
-   ============================================================================ */
 function initPairingChallenge() {
-  const board = document.getElementById("pairing-board");
-  const statusEl = document.getElementById("pairing-status");
-  const resetBtn = document.getElementById("widget-reset-btn");
-  const pickBtns = document.querySelectorAll(".base-pick-btn");
+  const board = $("pairing-board");
+  const statusEl = $("pairing-status");
+  const resetBtn = $("widget-reset-btn");
   if (!board || !statusEl || !resetBtn) return;
 
   const pool = ["A", "T", "G", "C"];
   let template = [];
-  let currentSlot = 0;
+  let answers = [];
+  let cursor = 0;
 
-  function renderBoard() {
-    board.innerHTML = "";
-    template.forEach((base, idx) => {
-      const col = document.createElement("div");
-      col.className = "pair-col";
-      if (idx === currentSlot) col.classList.add("is-current");
-
-      const topChip = document.createElement("div");
-      topChip.className = "template-chip";
-      topChip.textContent = base;
-
-      const bond = document.createElement("div");
-      bond.className = "hbond-mini";
-      bond.textContent = "·";
-
-      const ans = document.createElement("div");
-      ans.className = "answer-chip";
-      ans.textContent = "?";
-
-      col.append(topChip, bond, ans);
-      board.appendChild(col);
-    });
-  }
-
-  function startChallenge() {
+  function setup() {
     template = Array.from({ length: 6 }, () => pool[Math.floor(Math.random() * pool.length)]);
-    currentSlot = 0;
+    answers = Array(6).fill(null);
+    cursor = 0;
     renderBoard();
-    statusEl.textContent = "Chọn base bổ sung cho vị trí #1 đang sáng viền:";
+    statusEl.textContent = `Chọn base bổ sung cho ô #1 (${template[0]}) đang đánh dấu:`;
   }
 
-  function handlePick(choice) {
-    if (currentSlot >= template.length) return;
-    const expected = BASE_INFO[template[currentSlot]].complement;
-    const cols = board.querySelectorAll(".pair-col");
-    const activeCol = cols[currentSlot];
+  function renderBoard(shakeIdx = -1) {
+    board.replaceChildren(...template.map((code, idx) => {
+      const col = el("div", { class: `pair-col ${idx === cursor ? "is-current" : ""} ${answers[idx] ? "is-solved" : ""} ${idx === shakeIdx ? "is-shake" : ""}`.trim() }, [
+        el("span", { class: "template-chip", text: code }),
+        el("span", { class: "hbond-mini", text: answers[idx] ? (BASE_INFO[code].bonds === 2 ? "=" : "≡") : "·" }),
+        el("span", { class: "answer-chip", text: answers[idx] || "?" })
+      ]);
+      col.addEventListener("click", () => { if (!answers[idx]) { cursor = idx; renderBoard(); } });
+      return col;
+    }));
+  }
 
-    if (choice === expected) {
-      activeCol.classList.remove("is-current", "is-shake");
-      activeCol.classList.add("is-solved");
-      const bonds = BASE_INFO[template[currentSlot]].bonds;
-      activeCol.querySelector(".hbond-mini").textContent = bonds === 2 ? "= 2H" : "≡ 3H";
-      activeCol.querySelector(".answer-chip").textContent = choice;
-      currentSlot += 1;
-
-      if (currentSlot < template.length) {
-        cols[currentSlot].classList.add("is-current");
-        statusEl.textContent = `Chính xác! Tiếp tục chọn cho vị trí #${currentSlot + 1}:`;
+  document.querySelectorAll(".pick-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (cursor < 0 || cursor >= 6) return;
+      const pick = btn.dataset.pick;
+      const expected = BASE_INFO[template[cursor]].complement;
+      if (pick === expected) {
+        answers[cursor] = pick;
+        const nextEmpty = answers.findIndex((a) => a === null);
+        cursor = nextEmpty;
+        renderBoard();
+        statusEl.textContent = nextEmpty === -1
+          ? "Hoàn thành 6/6 cặp base đúng quy ước A=T và G≡C của Nhóm 4."
+          : `Đúng. Tiếp tục chọn base bổ sung cho ô #${nextEmpty + 1} (${template[nextEmpty]}):`;
       } else {
-        statusEl.textContent = "Hoàn thành 6/6 cặp! Bạn đã nắm vững nguyên tắc bổ sung (A=T, G≡C).";
+        renderBoard(cursor);
+        statusEl.textContent = `Chưa đúng: ${template[cursor]} chỉ ghép với ${expected} (A=T, G≡C).`;
       }
-    } else {
-      activeCol.classList.remove("is-shake");
-      void activeCol.offsetWidth;
-      activeCol.classList.add("is-shake");
-      statusEl.textContent = `Chưa khớp với ${template[currentSlot]}! Hãy nhớ: A đi với T, G đi với C.`;
-    }
-  }
-
-  pickBtns.forEach((btn) => {
-    btn.addEventListener("click", () => handlePick(btn.dataset.pick));
+    });
   });
-  document.getElementById("pairing-widget")?.addEventListener("keydown", (e) => {
-    const key = e.key.toUpperCase();
-    if (["A", "T", "G", "C"].includes(key) && !e.ctrlKey && !e.metaKey) {
-      e.preventDefault();
-      handlePick(key);
-    }
-  });
-  resetBtn.addEventListener("click", startChallenge);
 
-  startChallenge();
+  resetBtn.addEventListener("click", setup);
+  setup();
 }
 
-/* ============================================================================
-   7. LIGHTBOX CÓ FOCUS TRAP, ESC, MŨI TÊN & VUỐT MOBILE (POINTER EVENTS)
-   ============================================================================ */
 function initLightbox() {
-  const lightbox = document.getElementById("lightbox");
-  const dialog = document.getElementById("lightbox-dialog");
-  const backdrop = document.getElementById("lightbox-backdrop");
-  const img = document.getElementById("lightbox-img");
-  const caption = document.getElementById("lightbox-caption");
-  const counter = document.getElementById("lightbox-counter");
-  const closeBtn = document.getElementById("lightbox-close-btn");
-  const prevBtn = document.getElementById("lightbox-prev-btn");
-  const nextBtn = document.getElementById("lightbox-next-btn");
-  const zoomBtn = document.getElementById("lightbox-zoom-btn");
-  const stage = document.getElementById("lightbox-stage");
-  if (!lightbox || !dialog || !img) return;
+  const lightbox = $("lightbox");
+  const img = $("lightbox-img");
+  const zoomBtn = $("lightbox-zoom-btn");
+  const closeBtn = $("lightbox-close-btn");
+  if (!lightbox || !img || !GALLERY_ITEMS.length) return;
 
   let current = 0;
   let lastTrigger = null;
@@ -716,8 +550,8 @@ function initLightbox() {
     img.classList.remove("is-zoomed");
     zoomBtn.setAttribute("aria-pressed", "false");
     zoomBtn.textContent = "Phóng to 1.5×";
-    caption.textContent = item.caption;
-    counter.textContent = `${current + 1} / ${GALLERY_ITEMS.length}`;
+    $("lightbox-caption").textContent = item.caption;
+    $("lightbox-counter").textContent = `${current + 1} / ${GALLERY_ITEMS.length}`;
   }
 
   function open(idx, trigger) {
@@ -734,224 +568,84 @@ function initLightbox() {
     lastTrigger?.focus?.();
   }
 
-  document.querySelectorAll("#photo-gallery .photo-card .photo-trigger").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      open(Number(btn.closest(".photo-card")?.dataset.index || 0), btn);
-    });
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-open-lightbox]");
+    if (trigger) open(parseInt(trigger.dataset.openLightbox || "0", 10), trigger);
   });
 
-  document.querySelectorAll("[data-open-lightbox]").forEach((btn) => {
-    btn.addEventListener("click", () => open(Number(btn.dataset.openLightbox || 0), btn));
-  });
-
+  $("lightbox-backdrop")?.addEventListener("click", close);
   closeBtn.addEventListener("click", close);
-  backdrop.addEventListener("click", close);
-  prevBtn.addEventListener("click", () => render(current - 1));
-  nextBtn.addEventListener("click", () => render(current + 1));
-
+  $("lightbox-prev-btn")?.addEventListener("click", () => render(current - 1));
+  $("lightbox-next-btn")?.addEventListener("click", () => render(current + 1));
   zoomBtn.addEventListener("click", () => {
-    const zoomed = img.classList.toggle("is-zoomed");
-    zoomBtn.setAttribute("aria-pressed", String(zoomed));
-    zoomBtn.textContent = zoomed ? "Thu gọn 1×" : "Phóng to 1.5×";
+    const next = !img.classList.contains("is-zoomed");
+    img.classList.toggle("is-zoomed", next);
+    zoomBtn.setAttribute("aria-pressed", String(next));
+    zoomBtn.textContent = next ? "Thu nhỏ" : "Phóng to 1.5×";
   });
-
-  // Focus trap & điều khiển bàn phím khi Lightbox đang mở
   document.addEventListener("keydown", (e) => {
     if (lightbox.hidden) return;
-    if (e.key === "Escape") {
-      close();
-    } else if (e.key === "ArrowLeft") {
-      e.preventDefault();
-      render(current - 1);
-    } else if (e.key === "ArrowRight") {
-      e.preventDefault();
-      render(current + 1);
-    } else if (e.key === "Tab") {
-      const focusables = Array.from(dialog.querySelectorAll("button:not([disabled])"));
-      if (!focusables.length) return;
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    }
-  });
-
-  // Vuốt chuyển ảnh bằng Pointer Events
-  let startX = 0;
-  let startY = 0;
-  stage.addEventListener("pointerdown", (e) => {
-    startX = e.clientX;
-    startY = e.clientY;
-  });
-  stage.addEventListener("pointerup", (e) => {
-    const dx = e.clientX - startX;
-    const dy = e.clientY - startY;
-    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
-      render(dx < 0 ? current + 1 : current - 1);
-    }
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") render(current - 1);
+    else if (e.key === "ArrowRight") render(current + 1);
   });
 }
 
-/* ============================================================================
-   8. TRÌNH XEM POWERPOINT (PRELOAD, HASH #slide-N, POINTER SWIPE, FULLSCREEN)
-   ============================================================================ */
 function initSlideViewer() {
-  const viewer = document.getElementById("slide-viewer");
-  const mainImg = document.getElementById("slide-main-img");
-  const fallback = document.getElementById("slide-fallback");
-  const fbBadge = document.getElementById("fallback-badge");
-  const fbTitle = document.getElementById("fallback-title");
-  const fbPath = document.getElementById("fallback-path");
-  const counter = document.getElementById("slide-counter");
-  const titleEl = document.getElementById("slide-current-title");
-  const progress = document.getElementById("slide-progress-fill");
-  const thumbs = document.getElementById("slide-thumbs");
-  const prevBtn = document.getElementById("slide-prev-btn");
-  const nextBtn = document.getElementById("slide-next-btn");
-  const fsBtn = document.getElementById("slide-fullscreen-btn");
-  const viewport = document.getElementById("slide-viewport");
-  const embedHost = document.getElementById("embed-host");
-  const embedFrame = document.getElementById("slide-embed-frame");
+  const viewer = $("slide-viewer");
+  const mainImg = $("slide-main-img");
+  const fallback = $("slide-fallback");
+  const thumbs = $("slide-thumbs");
+  if (!viewer || !mainImg || !thumbs) return;
 
-  // Nếu có EMBED_URL, thay thế viewer bằng iframe nhúng
-  if (EMBED_URL && EMBED_URL.trim() !== "" && embedHost && embedFrame && viewer) {
-    embedFrame.src = EMBED_URL.trim();
-    embedHost.hidden = false;
-    viewer.hidden = true;
-    return;
+  if (EMBED_URL.trim()) {
+    $("embed-host").hidden = false;
+    $("slide-embed-frame").src = EMBED_URL.trim();
   }
 
-  if (!viewer || !mainImg || !thumbs || !SLIDES.length) return;
-
-  const total = SLIDES.length;
   let current = 0;
+  const total = SLIDES.length;
 
-  // Đọc deep link #slide-3 khi tải trang
-  function readSlideFromHash() {
-    const match = window.location.hash.match(/^#slide-(\d+)$/i);
-    if (!match) return 0;
-    const n = Number(match[1]);
-    return n >= 1 && n <= total ? n - 1 : 0;
-  }
-
-  // Tạo dải thumbnail động theo mảng SLIDES
-  const thumbBtns = SLIDES.map((slide, idx) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "thumb-btn";
-    btn.setAttribute("role", "listitem");
-    btn.setAttribute("aria-label", `Xem Slide ${idx + 1}: ${slide.title}`);
-
-    const img = document.createElement("img");
-    img.src = slide.src;
-    img.alt = `Thu nhỏ Slide ${idx + 1}`;
-    img.loading = "lazy";
-    img.decoding = "async";
-
-    const num = document.createElement("span");
-    num.className = "thumb-num";
-    num.textContent = String(idx + 1).padStart(2, "0");
-
-    img.addEventListener("error", () => {
-      img.remove();
-      num.hidden = true;
-      const box = document.createElement("div");
-      box.className = "thumb-fallback";
-      box.textContent = `Slide ${String(idx + 1).padStart(2, "0")}`;
-      btn.prepend(box);
-    });
-
-    btn.append(img, num);
+  const thumbBtns = SLIDES.map((s, idx) => {
+    const btn = el("button", { type: "button", class: "thumb-btn", "aria-label": `Xem Slide ${idx + 1}` }, [
+      el("img", { src: s.src, alt: s.title, loading: "lazy", decoding: "async" }),
+      el("span", { class: "thumb-num", text: String(idx + 1).padStart(2, "0") })
+    ]);
     btn.addEventListener("click", () => goTo(idx));
-    thumbs.appendChild(btn);
+    thumbs.append(btn);
     return btn;
   });
 
-  function preloadNext(idx) {
-    const nextIdx = (idx + 1) % total;
-    const pre = new Image();
-    pre.src = SLIDES[nextIdx].src;
-  }
-
-  function showImage() {
-    viewport.classList.remove("has-fallback");
-    fallback.hidden = true;
-    mainImg.hidden = false;
-    mainImg.classList.remove("is-animating");
-    void mainImg.offsetWidth;
-    mainImg.classList.add("is-animating");
-  }
-
-  function showFallback(slide, idx) {
-    viewport.classList.add("has-fallback");
+  mainImg.addEventListener("load", () => { fallback.hidden = true; mainImg.hidden = false; });
+  mainImg.addEventListener("error", () => {
     mainImg.hidden = true;
     fallback.hidden = false;
-    fbBadge.textContent = `Slide ${String(idx + 1).padStart(2, "0")} / ${total}`;
-    fbTitle.textContent = slide.title;
-    fbPath.textContent = slide.src;
-  }
+    $("fallback-badge").textContent = `Slide ${String(current + 1).padStart(2, "0")} / ${total}`;
+    $("fallback-title").textContent = SLIDES[current].title;
+    $("fallback-path").textContent = SLIDES[current].src;
+  });
 
-  mainImg.addEventListener("load", showImage);
-  mainImg.addEventListener("error", () => showFallback(SLIDES[current], current));
-
-  function goTo(idx, opts = { scrollThumb: true, updateHash: true }) {
+  function goTo(idx) {
     current = (idx + total) % total;
     const slide = SLIDES[current];
-
-    counter.textContent = `${current + 1} / ${total}`;
-    titleEl.textContent = slide.title;
-    progress.style.transform = `scaleX(${((current + 1) / total).toFixed(4)})`;
-
+    $("slide-counter").textContent = `${current + 1} / ${total}`;
+    $("slide-current-title").textContent = slide.title;
+    $("slide-progress-fill").style.transform = `scaleX(${((current + 1) / total).toFixed(4)})`;
     thumbBtns.forEach((b, i) => {
       const active = i === current;
       b.classList.toggle("is-active", active);
-      b.setAttribute("aria-current", active ? "true" : "false");
-      if (active && opts.scrollThumb) {
-        const left = b.offsetLeft - (thumbs.clientWidth - b.clientWidth) * 0.5;
-        thumbs.scrollTo({ left: Math.max(0, left), behavior: REDUCED_MOTION ? "auto" : "smooth" });
-      }
+      if (active) thumbs.scrollTo({ left: Math.max(0, b.offsetLeft - (thumbs.clientWidth - b.clientWidth) * 0.5), behavior: REDUCED_MOTION ? "auto" : "smooth" });
     });
-
-    if (opts.updateHash && window.history?.replaceState) {
-      window.history.replaceState(null, "", `#slide-${current + 1}`);
-    }
-
+    mainImg.src = slide.src;
     mainImg.alt = `Slide ${current + 1}: ${slide.title}`;
-    if (mainImg.getAttribute("src") === slide.src) {
-      if (mainImg.complete) {
-        if (mainImg.naturalWidth > 0) showImage();
-        else showFallback(slide, current);
-      }
-    } else {
-      mainImg.src = slide.src;
-    }
-    preloadNext(current);
   }
 
-  prevBtn.addEventListener("click", () => goTo(current - 1));
-  nextBtn.addEventListener("click", () => goTo(current + 1));
+  $("slide-prev-btn")?.addEventListener("click", () => goTo(current - 1));
+  $("slide-next-btn")?.addEventListener("click", () => goTo(current + 1));
 
-  // Phím tắt ← → Home End
-  const presentationSec = document.getElementById("presentation");
-  let secInView = false;
-  if ("IntersectionObserver" in window && presentationSec) {
-    new IntersectionObserver((entries) => {
-      secInView = entries[0].isIntersecting;
-    }, { threshold: 0.35 }).observe(presentationSec);
-  }
-
+  const fsBtn = $("slide-fullscreen-btn");
   const isFs = () => document.fullscreenElement === viewer || viewer.classList.contains("is-pseudo-fullscreen");
-  const syncFsLabel = () => {
-    const span = fsBtn.querySelector("span");
-    if (span) span.textContent = isFs() ? "Thoát toàn màn hình" : "Toàn màn hình";
-  };
-
-  fsBtn.addEventListener("click", async () => {
+  fsBtn?.addEventListener("click", async () => {
     if (isFs()) {
       if (document.fullscreenElement) await document.exitFullscreen().catch(() => {});
       viewer.classList.remove("is-pseudo-fullscreen");
@@ -965,150 +659,29 @@ function initSlideViewer() {
         document.body.style.overflow = "hidden";
       }
     }
-    syncFsLabel();
+    fsBtn.textContent = isFs() ? "Thu nhỏ" : "Toàn màn hình";
   });
-  document.addEventListener("fullscreenchange", syncFsLabel);
 
   document.addEventListener("keydown", (e) => {
-    const lb = document.getElementById("lightbox");
-    if (lb && !lb.hidden) return;
-    if (e.key === "Escape" && viewer.classList.contains("is-pseudo-fullscreen")) {
-      viewer.classList.remove("is-pseudo-fullscreen");
-      document.body.style.overflow = "";
-      syncFsLabel();
-      return;
-    }
-    if (!(viewer.contains(document.activeElement) || isFs() || secInView)) return;
-
-    if (e.key === "ArrowLeft") { e.preventDefault(); goTo(current - 1); }
-    else if (e.key === "ArrowRight") { e.preventDefault(); goTo(current + 1); }
-    else if (e.key === "Home") { e.preventDefault(); goTo(0); }
-    else if (e.key === "End") { e.preventDefault(); goTo(total - 1); }
+    if (!$("lightbox")?.hidden) return;
+    if (e.key === "ArrowLeft" && (viewer.contains(document.activeElement) || isFs())) { e.preventDefault(); goTo(current - 1); }
+    else if (e.key === "ArrowRight" && (viewer.contains(document.activeElement) || isFs())) { e.preventDefault(); goTo(current + 1); }
   });
 
-  // Vuốt trên mobile bằng Pointer Events
-  let pX = 0;
-  let pY = 0;
-  viewport.addEventListener("pointerdown", (e) => { pX = e.clientX; pY = e.clientY; });
-  viewport.addEventListener("pointerup", (e) => {
-    const dx = e.clientX - pX;
-    const dy = e.clientY - pY;
-    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
-      goTo(dx < 0 ? current + 1 : current - 1);
-    }
-  });
-
-  window.addEventListener("hashchange", () => {
-    if (/^#slide-\d+$/i.test(window.location.hash)) {
-      goTo(readSlideFromHash(), { scrollThumb: true, updateHash: false });
-    }
-  });
-
-  const initialIdx = readSlideFromHash();
-  const hasSlideHash = /^#slide-\d+$/i.test(window.location.hash);
-  goTo(initialIdx, { scrollThumb: false, updateHash: hasSlideHash });
-  if (hasSlideHash && presentationSec) {
-    requestAnimationFrame(() => {
-      presentationSec.scrollIntoView({ behavior: REDUCED_MOTION ? "auto" : "smooth" });
-    });
-  }
+  goTo(0);
 }
 
-/* ============================================================================
-   9. GSAP SCROLLTRIGGER + ĐƯỜNG SÓNG DNA MÉP PHẢI + TIMELINE ZIGZAG
-   ============================================================================ */
-function initScrollAnimations() {
-  const cyanRail = document.getElementById("dna-rail-cyan");
-  const violetRail = document.getElementById("dna-rail-violet");
-  const railPct = document.getElementById("scroll-rail-pct");
-  const zigProgress = document.getElementById("zigzag-progress");
-  const timeline = document.getElementById("zigzag-timeline");
-
-  // Chuẩn bị stroke-dashoffset cho đường sóng DNA chữ ký (Mục 8.4)
-  const railPaths = [cyanRail, violetRail].filter(Boolean);
-  const railLengths = railPaths.map((p) => {
-    const len = p.getTotalLength();
-    p.style.strokeDasharray = `${len}`;
-    p.style.strokeDashoffset = `${len}`;
-    return len;
+function initScrollReveals() {
+  if (!window.gsap || !window.ScrollTrigger || REDUCED_MOTION) return;
+  window.gsap.registerPlugin(window.ScrollTrigger);
+  window.gsap.utils.toArray(".gs-reveal").forEach((node) => {
+    window.gsap.from(node, {
+      y: 16,
+      opacity: 0,
+      duration: 0.45,
+      ease: "power2.out",
+      clearProps: "transform,opacity",
+      scrollTrigger: { trigger: node, start: "top 90%", once: true }
+    });
   });
-
-  function updateScrollDecor() {
-    const doc = document.documentElement;
-    const maxScroll = Math.max(doc.scrollHeight - window.innerHeight, 1);
-    const ratio = Math.max(0, Math.min(1, window.scrollY / maxScroll));
-
-    railPaths.forEach((p, i) => {
-      p.style.strokeDashoffset = `${railLengths[i] * (1 - ratio)}`;
-    });
-    if (railPct) railPct.textContent = `${Math.round(ratio * 100)}%`;
-
-    if (timeline && zigProgress) {
-      const rect = timeline.getBoundingClientRect();
-      const mid = window.innerHeight * 0.62;
-      const ratioTimeline = Math.max(0, Math.min(1, (mid - rect.top) / Math.max(rect.height, 1)));
-      zigProgress.style.transform = `scaleY(${ratioTimeline.toFixed(4)})`;
-    }
-  }
-
-  // Dùng GSAP + ScrollTrigger khi khả dụng và người dùng không giảm chuyển động
-  if (window.gsap && window.ScrollTrigger && !REDUCED_MOTION) {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Reveal fade-up nhẹ nhàng cho từng khối
-    gsap.utils.toArray(".gs-reveal").forEach((el) => {
-      gsap.from(el, {
-        y: 20,
-        opacity: 0,
-        duration: 0.52,
-        ease: "power2.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 88%",
-          once: true
-        }
-      });
-    });
-
-    // Thanh tiến trình đường sóng DNA & timeline zigzag đồng bộ ScrollTrigger
-    ScrollTrigger.create({
-      trigger: document.body,
-      start: "top top",
-      end: "bottom bottom",
-      onUpdate: (self) => {
-        const p = self.progress;
-        railPaths.forEach((path, i) => {
-          path.style.strokeDashoffset = `${railLengths[i] * (1 - p)}`;
-        });
-        if (railPct) railPct.textContent = `${Math.round(p * 100)}%`;
-      }
-    });
-
-    if (timeline && zigProgress) {
-      gsap.to(zigProgress, {
-        scaleY: 1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: timeline,
-          start: "top 65%",
-          end: "bottom 60%",
-          scrub: true
-        }
-      });
-    }
-  } else {
-    // Fallback an toàn (khi chạy offline không tải được CDN hoặc prefers-reduced-motion)
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          ticking = false;
-          updateScrollDecor();
-        });
-      }
-    }, { passive: true });
-    updateScrollDecor();
-  }
 }

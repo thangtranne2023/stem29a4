@@ -3,59 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiết kế Mô hình Cấu trúc Phân tử DNA từ Vật liệu Đơn giản — Nhóm 4 (9A4)</title>
-  <meta name="description" content="Trang trình bày dự án STEM Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản (KHTN lớp 9) — Nhóm 4, Lớp 9A4, Trường THCS Hội Nghĩa.">
-  <meta name="theme-color" content="#071426">
+  <title>Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản — Nhóm 4 (9A4)</title>
+  <meta name="description" content="Hồ sơ dự án STEM KHTN lớp 9: Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản của Nhóm 4, lớp 9A4, Trường THCS Hội Nghĩa (2026–2027).">
+  <meta name="theme-color" content="#F3F6FB">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Thiết kế Mô hình Cấu trúc Phân tử DNA từ Vật liệu Đơn giản — Nhóm 4">
-  <meta property="og:description" content="Dự án STEM Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản của Nhóm 4, Lớp 9A4, Trường THCS Hội Nghĩa (2026–2027).">
+  <meta property="og:title" content="Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản — Nhóm 4">
+  <meta property="og:description" content="Mô hình xoắn kép DNA bằng bìa carton nền vàng, dây kẽm, xiên que, que kem và đất sét tự khô của Nhóm 4, lớp 9A4, Trường THCS Hội Nghĩa.">
 
-  <!-- Favicon SVG nội tuyến (hoạt động ngay cả khi mở file://) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='8' fill='%23071426'/%3E%3Cpath d='M10 5 C10 13, 26 13, 26 18 C26 23, 10 23, 10 31' fill='none' stroke='%2328D7F2' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M26 5 C26 13, 10 13, 10 18 C10 23, 26 23, 26 31' fill='none' stroke='%23815CF5' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='6' fill='%230B4F8C'/%3E%3Cpath d='M10 6 C10 13, 26 13, 26 18 C26 23, 10 23, 10 30' fill='none' stroke='%23FACC15' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M26 6 C26 13, 10 13, 10 18 C10 23, 26 23, 26 30' fill='none' stroke='%23FFFFFF' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 
-  <!-- Google Fonts hỗ trợ đầy đủ dấu tiếng Việt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
 
-  <!-- Lớp nền đa tầng: gradient radial, lưới mờ và noise nhẹ SVG -->
-  <div class="bg-atmosphere" aria-hidden="true">
-    <div class="bg-orb bg-orb--cyan"></div>
-    <div class="bg-orb bg-orb--violet"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-noise"></div>
-  </div>
-
-  <!-- Signature element (Mục 8.4): đường sóng DNA dọc mép phải vẽ dần theo tiến độ cuộn -->
-  <aside class="scroll-dna-rail" aria-hidden="true">
-    <svg viewBox="0 0 44 260" width="44" height="260">
-      <path id="dna-rail-cyan" class="rail-path rail-path--cyan" d="M12 10 C34 32, 34 52, 12 74 C-2 90, 34 114, 12 136 C-2 152, 34 176, 12 198 C34 220, 34 236, 12 250"/>
-      <path id="dna-rail-violet" class="rail-path rail-path--violet" d="M32 10 C10 32, 10 52, 32 74 C46 90, 10 114, 32 136 C46 152, 10 176, 32 198 C10 220, 10 236, 32 250"/>
-    </svg>
-    <span class="rail-pct" id="scroll-rail-pct">0%</span>
-  </aside>
-
-  <!-- =======================================================================
-       THANH ĐIỀU HƯỚNG CỐ ĐỊNH + THANH "DÀNH CHO GIÁO VIÊN" LUÔN HIỂN THỊ
-       ======================================================================= -->
+  <!-- Header Sổ tay Khoa học Sáng, Tab gạch chân & Thanh tác vụ nhanh -->
   <header class="site-header" id="top">
     <div class="container nav-inner">
-      <a href="#hero" class="brand" aria-label="Trang chủ Mô hình DNA">
-        <svg viewBox="0 0 36 36" width="30" height="30" aria-hidden="true">
-          <path d="M10 4 C10 12, 26 12, 26 18 C26 24, 10 24, 10 32" fill="none" stroke="#28D7F2" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M26 4 C26 12, 10 12, 10 18 C10 24, 26 24, 26 32" fill="none" stroke="#815CF5" stroke-width="2.6" stroke-linecap="round"/>
-          <line x1="12" y1="8" x2="24" y2="8" stroke="#B9E8F5" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="13" y1="18" x2="23" y2="18" stroke="#B9E8F5" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="12" y1="28" x2="24" y2="28" stroke="#B9E8F5" stroke-width="1.8" stroke-linecap="round"/>
-        </svg>
+      <a href="#hero" class="brand" aria-label="Dự án DNA Nhóm 4">
+        <span class="brand-badge" aria-hidden="true">DNA</span>
         <div class="brand-text">
-          <span class="brand-title">MÔ HÌNH DNA</span>
-          <span class="brand-sub">KHTN 9 · Nhóm 4</span>
+          <span class="brand-title">NHÓM 4 · LỚP 9A4</span>
+          <span class="brand-sub">STEM KHTN 9 · THCS Hội Nghĩa</span>
         </div>
       </a>
 
@@ -63,20 +36,16 @@
         <ul class="nav-list">
           <li><a href="#structure" class="nav-link">Cấu trúc</a></li>
           <li><a href="#design" class="nav-link">Thiết kế</a></li>
-          <li><a href="#materials" class="nav-link">Nguyên liệu</a></li>
+          <li><a href="#materials" class="nav-link">Vật liệu &amp; Ảnh</a></li>
           <li><a href="#product" class="nav-link">Sản phẩm</a></li>
-          <li><a href="#team" class="nav-link">Nhóm</a></li>
+          <li><a href="#presentation" class="nav-link">Bài thuyết trình</a></li>
+          <li><a href="#team" class="nav-link">Thành viên</a></li>
         </ul>
       </nav>
 
-      <!-- Thanh công cụ nhanh luôn thấy cho giáo viên chấm bài -->
-      <div class="teacher-bar" role="region" aria-label="Dành cho giáo viên">
-        <span class="teacher-bar-label">Dành cho giáo viên:</span>
-        <a href="#presentation" class="t-btn t-btn--ghost">
-          <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><rect x="2" y="3.5" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><polygon points="8.5,6.8 13,9 8.5,11.2" fill="currentColor"/></svg>
-          <span>Xem PPTX</span>
-        </a>
-        <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="t-btn t-btn--solid">
+      <div class="header-actions" role="region" aria-label="Tải nhanh tài liệu">
+        <a href="#presentation" class="h-btn h-btn--ghost">Xem 10 slide</a>
+        <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="h-btn h-btn--solid">
           <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M10 3v9m0 0l-3.5-3.5M10 12l3.5-3.5M4 15.5h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Tải PPTX</span>
         </a>
@@ -90,447 +59,372 @@
     <div class="mobile-drawer" id="mobile-nav-drawer" hidden>
       <nav aria-label="Mục lục di động">
         <ul class="mobile-nav-list">
-          <li><a href="#structure" class="mobile-nav-link">Cấu trúc phân tử DNA</a></li>
-          <li><a href="#design" class="mobile-nav-link">Ý tưởng &amp; thiết kế</a></li>
-          <li><a href="#materials" class="mobile-nav-link">Nguyên liệu &amp; dụng cụ</a></li>
-          <li><a href="#product" class="mobile-nav-link">Sản phẩm hoàn thiện</a></li>
-          <li><a href="#presentation" class="mobile-nav-link">Xem &amp; tải PowerPoint</a></li>
-          <li><a href="#team" class="mobile-nav-link">Nhóm thực hiện</a></li>
+          <li><a href="#structure" class="mobile-nav-link">Cấu trúc &amp; Ghép cặp bổ sung</a></li>
+          <li><a href="#design" class="mobile-nav-link">Ý tưởng &amp; Quy ước màu Nhóm 4</a></li>
+          <li><a href="#materials" class="mobile-nav-link">Vật liệu &amp; 7 ảnh quá trình</a></li>
+          <li><a href="#product" class="mobile-nav-link">Mô hình hoàn chỉnh trước lớp</a></li>
+          <li><a href="#presentation" class="mobile-nav-link">Trình chiếu 10 slide PowerPoint</a></li>
+          <li><a href="#team" class="mobile-nav-link">Danh sách 6 thành viên Nhóm 4</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- =====================================================================
-         1. HERO (CHIA ĐÔI: CHỮ TRÁI — CHUỖI DNA 3D PHẢI; MOBILE LÀM NỀN CÓ SCRIM)
-         ===================================================================== -->
+    <!-- 1. HERO: Chia cột Bất đối xứng Trái (Nhãn Lab + Tiêu đề đậm) / Phải (Khung Navy Helix Dọc) -->
     <section class="hero-section" id="hero" aria-labelledby="hero-title">
-      <canvas id="hero-dna-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-scrim" aria-hidden="true"></div>
-
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badges">
-            <span class="pill-badge pill-badge--cyan">Dự án STEM · KHTN Lớp 9</span>
-            <span class="pill-badge pill-badge--teal">Trường THCS Hội Nghĩa · Lớp 9A4 · Nhóm 4</span>
+      <div class="container hero-split">
+        <div class="hero-copy">
+          <div class="hero-meta-row">
+            <span class="badge-tag badge-tag--blue">Dự án STEM KHTN Lớp 9</span>
+            <span class="badge-tag badge-tag--amber">Nhóm 4 · Lớp 9A4 · 2026–2027</span>
           </div>
 
-          <h1 id="hero-title" class="hero-title hero-title--long">
-            THIẾT KẾ MÔ HÌNH CẤU TRÚC PHÂN TỬ <span class="text-gradient">DNA</span> TỪ VẬT LIỆU ĐƠN GIẢN
+          <h1 id="hero-title" class="hero-title">
+            Thiết kế mô hình cấu trúc phân tử <span class="title-highlight">DNA</span> từ vật liệu đơn giản
           </h1>
+
           <p class="hero-subtitle">
-            <strong>Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản</strong> (năm học 2026–2027): tái hiện trực quan cấu trúc xoắn kép phân tử <em>Deoxyribonucleic acid</em> bằng vật liệu thủ công dễ tìm, phục vụ học tập và báo cáo trước lớp.
+            Mô hình trực quan do Nhóm 4 chế tạo từ thùng bìa carton sơn nền vàng, trục dây kẽm – xiên que, que kem gỗ và đất sét tự khô bốn màu <strong>A (Đỏ) – T (Xanh dương) – G (Xanh lá) – C (Vàng)</strong>.
           </p>
 
-          <div class="hero-ctas">
-            <a href="#presentation" class="btn btn-primary btn-lg">
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="10,8.5 16,11.5 10,14.5" fill="currentColor"/><path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              <span>Xem bài thuyết trình</span>
-            </a>
-            <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-secondary btn-lg">
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Tải file PPTX</span>
-            </a>
+          <div class="hero-actions">
+            <a href="#presentation" class="btn btn-cobalt">Xem bài thuyết trình (10 slide)</a>
+            <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-outline">Tải file PPTX gốc (4,1 MB)</a>
+          </div>
+
+          <div class="color-key-strip" aria-label="Quy ước màu base của Nhóm 4">
+            <span class="key-chip"><i class="dot dot--red"></i>A · Đỏ</span>
+            <span class="key-chip"><i class="dot dot--blue"></i>T · Xanh dương</span>
+            <span class="key-chip"><i class="dot dot--green"></i>G · Xanh lá</span>
+            <span class="key-chip"><i class="dot dot--yellow"></i>C · Vàng</span>
           </div>
         </div>
 
-        <div class="hero-stage-note" aria-hidden="true">
-          <div class="glass-card helix-caption-card">
-            <p class="legend-title">Mô phỏng xoắn kép 3D</p>
-            <ul class="legend-list">
-              <li><span class="swatch swatch--cyan"></span> Mạch khung 1 (Cyan)</li>
-              <li><span class="swatch swatch--violet"></span> Mạch khung 2 (Violet)</li>
-              <li><span class="swatch swatch--grad"></span> Cặp base bổ sung A–T, G–C</li>
-            </ul>
-            <p class="legend-sub">Di chuyển chuột để nghiêng góc nhìn ±8°</p>
+        <div class="hero-stage-card">
+          <div class="stage-topbar">
+            <span>Mô phỏng xoắn kép đứng 3D</span>
+            <span class="stage-code">A=T · G≡C</span>
           </div>
+          <div class="hero-canvas-wrap">
+            <canvas id="hero-dna-canvas" class="hero-canvas" aria-label="Chuỗi xoắn kép DNA 3D tương tác của Nhóm 4"></canvas>
+          </div>
+          <p class="stage-caption">Di chuyển chuột để nghiêng chuỗi xoắn · Hai dải mạch đối song song quanh trục giữa</p>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         4. CẤU TRÚC PHÂN TỬ DNA (TOÀN CHIỀU RỘNG: HELIX TƯƠNG TÁC + THỬ THÁCH GHÉP CẶP)
-         ===================================================================== -->
-    <section class="section" id="structure" aria-labelledby="structure-title">
+    <!-- 2. PHÒNG THÍ NGHIỆM CẤU TRÚC (Canvas Trái / Inspector Phải + Thử thách nền Vàng Amber) -->
+    <section class="section section--sky" id="structure" aria-labelledby="structure-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">04 · Mô phỏng tương tác</span>
-          <h2 id="structure-title" class="section-title">Cấu trúc phân tử DNA &amp; Nguyên tắc bổ sung</h2>
-          <p class="section-lead">
-            Rê chuột, chạm vào từng cặp base trên chuỗi xoắn 3D hoặc chọn nhanh bằng bàn phím để xem chi tiết cấu tạo và số liên kết hydro.
-          </p>
+          <div>
+            <span class="section-kicker">01 · Giải phẫu phân tử</span>
+            <h2 id="structure-title" class="section-title">Cấu trúc xoắn kép &amp; Quy ước màu Nhóm 4</h2>
+          </div>
+          <p class="section-lead">Chạm trực tiếp vào từng cặp que gỗ trên mô phỏng 3D hoặc chọn nút bậc bên dưới để xem liên kết hydro theo đúng bảng màu của Nhóm 4.</p>
         </header>
 
-        <!-- Khối 1: Helix Canvas 3D tương tác (dùng lại engine 8.1) + Inspector -->
-        <div class="structure-lab glass-card gs-reveal">
-          <div class="structure-canvas-col">
+        <div class="lab-grid ink-card gs-reveal">
+          <div class="lab-left">
             <div class="lab-toolbar">
-              <button type="button" class="tool-btn" id="helix-play-btn" aria-pressed="true">
-                <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><rect x="5" y="4" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="11.5" y="4" width="3.5" height="12" rx="1" fill="currentColor"/></svg>
-                <span>Dừng xoay</span>
-              </button>
-              <button type="button" class="tool-btn" id="helix-labels-btn" aria-pressed="true">
-                <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M3 10s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2.2" fill="currentColor"/></svg>
-                <span>Ẩn tên base</span>
-              </button>
+              <button type="button" class="tool-btn" id="helix-play-btn" aria-pressed="true">Tạm dừng xoay</button>
+              <button type="button" class="tool-btn" id="helix-labels-btn" aria-pressed="true">Ẩn chữ A T G C</button>
             </div>
-
-            <div class="canvas-stage-wrap">
-              <canvas id="structure-dna-canvas" class="structure-canvas" tabindex="0" aria-label="Chuỗi xoắn DNA 3D tương tác. Dùng phím mũi tên lên xuống hoặc rê chuột để chọn từng cặp base."></canvas>
+            <div class="lab-canvas-wrap">
+              <canvas id="structure-dna-canvas" class="structure-canvas" tabindex="0" aria-label="Mô hình DNA 3D tương tác từng cặp base"></canvas>
             </div>
-
-            <div class="pair-selector-bar" id="pair-selector-bar" role="group" aria-label="Chọn nhanh cặp base bằng bàn phím"></div>
+            <div class="pair-selector-bar" id="pair-selector-bar" role="group" aria-label="Chọn cặp base"></div>
           </div>
 
-          <aside class="structure-inspector" aria-live="polite" aria-label="Thông tin cặp base đang chọn">
-            <div class="inspector-head">
-              <span class="inspector-kicker">Cặp base đang chọn: <strong id="insp-idx">#1</strong></span>
-              <span class="bond-pill" id="insp-bond-pill">2 liên kết hydro</span>
+          <aside class="lab-inspector" aria-live="polite" aria-label="Thông số cặp base">
+            <div class="insp-top">
+              <span class="insp-index">Bậc đang chọn <strong id="insp-idx">#1</strong></span>
+              <span class="bond-badge" id="insp-bond-pill">2 liên kết hydro</span>
             </div>
 
-            <div class="insp-pair-cards">
-              <div class="insp-base" id="insp-left-card">
-                <span class="insp-code" id="insp-left-code">A</span>
-                <span class="insp-name" id="insp-left-name">Adenine</span>
+            <div class="insp-pair-row">
+              <div class="insp-base-box" id="insp-left-card">
+                <span class="insp-letter" id="insp-left-code">A</span>
+                <span class="insp-full" id="insp-left-name">Adenine</span>
               </div>
               <div class="insp-bonds" id="insp-bonds-visual" aria-hidden="true"><span></span><span></span></div>
-              <div class="insp-base" id="insp-right-card">
-                <span class="insp-code" id="insp-right-code">T</span>
-                <span class="insp-name" id="insp-right-name">Thymine</span>
+              <div class="insp-base-box" id="insp-right-card">
+                <span class="insp-letter" id="insp-right-code">T</span>
+                <span class="insp-full" id="insp-right-name">Thymine</span>
               </div>
             </div>
 
-            <h3 id="insp-title">Adenine (A) – Thymine (T)</h3>
-            <p id="insp-desc">
-              A (kích thước lớn) bắt cặp bổ sung với T (kích thước nhỏ) nhờ <strong>2 liên kết hydro (A = T)</strong>, giữ khoảng cách hai mạch khung đường–phosphate luôn ổn định (2 nm).
-            </p>
+            <h3 id="insp-title" class="insp-title">Adenine (A) – Thymine (T)</h3>
+            <p id="insp-desc" class="insp-desc">Adenine (A) liên kết bổ sung với Thymine (T) qua 2 liên kết hydro (A = T), giữ hai mạch khung song song cân đối.</p>
 
-            <dl class="insp-facts">
+            <dl class="insp-meta">
               <div>
-                <dt>Chiều 2 mạch</dt>
-                <dd>Đối song song: Mạch 1 (5' → 3') và Mạch 2 (3' ← 5')</dd>
+                <dt>Chiều xoắn &amp; mạch</dt>
+                <dd>Hai mạch chạy song song xoắn quanh trục dây kẽm ở giữa (5'–3' và 3'–5')</dd>
               </div>
               <div>
-                <dt>Màu trên mô hình Nhóm 4</dt>
-                <dd id="insp-model-color">Nửa Đỏ (A) – Nửa Vàng (T)</dd>
+                <dt>Màu quy ước trên mô hình Nhóm 4</dt>
+                <dd id="insp-model-color">Nửa Đỏ (A) – Nửa Xanh dương (T)</dd>
               </div>
             </dl>
           </aside>
         </div>
 
-        <!-- Khối 2: Widget "Thử thách ghép cặp" (Mục 8.2) -->
-        <div class="glass-card pairing-widget gs-reveal" id="pairing-widget">
-          <div class="widget-head">
+        <!-- Mini-game ghép cặp bổ sung nền Vàng Craft -->
+        <div class="pairing-panel ink-card gs-reveal" id="pairing-widget">
+          <div class="pairing-head">
             <div>
-              <h3>Thử thách ghép cặp bổ sung</h3>
-              <p class="widget-note">Phần minh họa kiến thức tương tác để ôn tập nguyên tắc bổ sung (không phải số liệu riêng của dự án).</p>
+              <span class="section-kicker">Thực hành tương tác</span>
+              <h3>Thử thách ghép cặp bổ sung base</h3>
             </div>
-            <button type="button" class="tool-btn" id="widget-reset-btn">
-              <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M4 10a6 6 0 1 1 1.8 4.3M4 10V6m0 4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <span>Chơi lại</span>
-            </button>
+            <button type="button" class="tool-btn" id="widget-reset-btn">Tạo dãy mới</button>
           </div>
-
           <div class="pairing-board" id="pairing-board" aria-live="polite"></div>
-
           <div class="pairing-controls">
-            <span class="controls-prompt" id="pairing-status">Chọn base bổ sung cho vị trí đang sáng viền:</span>
-            <div class="base-btn-group" role="group" aria-label="Chọn loại base để ghép cặp">
-              <button type="button" class="base-pick-btn" data-pick="A">A <span>(Adenine)</span></button>
-              <button type="button" class="base-pick-btn" data-pick="T">T <span>(Thymine)</span></button>
-              <button type="button" class="base-pick-btn" data-pick="G">G <span>(Guanine)</span></button>
-              <button type="button" class="base-pick-btn" data-pick="C">C <span>(Cytosine)</span></button>
+            <p class="controls-prompt" id="pairing-status">Chọn base bổ sung cho ô đầu tiên đang đánh dấu:</p>
+            <div class="base-btn-group" role="group" aria-label="Chọn base ghép cặp">
+              <button type="button" class="pick-btn pick-btn--red" data-pick="A">A <span>Adenine</span></button>
+              <button type="button" class="pick-btn pick-btn--blue" data-pick="T">T <span>Thymine</span></button>
+              <button type="button" class="pick-btn pick-btn--green" data-pick="G">G <span>Guanine</span></button>
+              <button type="button" class="pick-btn pick-btn--yellow" data-pick="C">C <span>Cytosine</span></button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         5. Ý TƯỞNG VÀ THIẾT KẾ MÔ HÌNH (BENTO GRID + GHI CHÉP NHÓM 2 + KHUNG CHỜ BẢN VẼ)
-         ===================================================================== -->
-    <section class="section section--alt" id="design" aria-labelledby="design-title">
+    <!-- 3. Ý TƯỞNG & SƠ ĐỒ MÔ HÌNH NHÓM 4 -->
+    <section class="section" id="design" aria-labelledby="design-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">05 · Ý tưởng &amp; thiết kế</span>
-          <h2 id="design-title" class="section-title">Ý tưởng thiết kế mô hình của Nhóm 4</h2>
+          <div>
+            <span class="section-kicker">02 · Cấu tạo &amp; quy ước · Slide 03–06</span>
+            <h2 id="design-title" class="section-title">Ý tưởng thiết kế của Nhóm 4</h2>
+          </div>
+          <p class="section-lead">Tạo mô hình thu nhỏ phân tử DNA từ vật liệu sẵn có: que kem nối cặp base xoắn quanh trục dây kẽm đặt trong khung bìa sơn vàng.</p>
         </header>
 
-        <div class="design-bento">
-          <article class="glass-card bento-idea gs-reveal">
-            <h3>Ý tưởng thiết kế mô hình vật lý</h3>
+        <div class="design-columns">
+          <article class="ink-card idea-card gs-reveal">
+            <h3>Cách thể hiện cấu trúc trên mô hình thật</h3>
             <p>
-              Thiết kế mô hình phân tử DNA dạng chuỗi xoắn kép dựng đứng từ vật liệu thủ công đơn giản (que kem gỗ, đất sét khô, bìa carton). Hai dải bìa carton dài mảnh (rộng khoảng <strong>1 – 1,5 cm</strong>) uốn lượn mô phỏng khung đường–phosphate xoắn đều quanh trục đứng (xoay lệch mỗi bậc <strong>30° – 36°</strong> theo chiều xoắn phải), cùng 4 màu đất sét nổi bật cho các cặp base bổ sung.
+              Hai dải mạch DNA chạy song song và xoắn quanh trục dây kẽm nằm ở giữa tạo thành chuỗi xoắn kép dựng đứng. Các thanh que kem tô hai nửa màu thể hiện nguyên tắc bổ sung: <strong>A liên kết T</strong> và <strong>G liên kết C</strong>.
+            </p>
+            <p>
+              Nhóm sử dụng bìa thùng carton dựng khung trưng bày sơn nền vàng ở lưng và đế màu trắng, gắn nổi hàng chữ đất sét <strong>A T G C</strong> phía trên, chữ <strong>D N A</strong> trang trí hai bên cùng bốn tấm bảng quy ước màu ngay mặt đế.
             </p>
 
             <table class="color-table">
-              <caption>Bảng quy ước màu sắc các cặp Base của Nhóm 4</caption>
+              <caption>Quy ước 4 màu base nitơ (theo Slide 05 của Nhóm 4)</caption>
               <thead>
                 <tr>
-                  <th scope="col">Base nitơ</th>
-                  <th scope="col">Màu quy ước</th>
-                  <th scope="col">Ghép cặp trên que kem</th>
+                  <th scope="col">Cặp liên kết</th>
+                  <th scope="col">Màu sắc quy định</th>
+                  <th scope="col">Cách ghép trên que kem</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>A</strong> (Adenine) / <strong>T</strong> (Thymine)</td>
-                  <td><span class="swatch swatch--red"></span> Đỏ &amp; <span class="swatch swatch--yellow"></span> Vàng</td>
-                  <td>Nửa đỏ – nửa vàng (A–T)</td>
+                  <td><strong>A</strong> – <strong>T</strong></td>
+                  <td><i class="dot dot--red"></i> Đỏ &amp; <i class="dot dot--blue"></i> Xanh dương</td>
+                  <td>Que kem nửa đỏ ghép nửa xanh dương</td>
                 </tr>
                 <tr>
-                  <td><strong>G</strong> (Guanine) / <strong>C</strong> (Cytosine)</td>
-                  <td><span class="swatch swatch--blue"></span> Xanh biển &amp; <span class="swatch swatch--green"></span> Xanh lá</td>
-                  <td>Nửa xanh dương – nửa xanh lá (G–C)</td>
+                  <td><strong>G</strong> – <strong>C</strong></td>
+                  <td><i class="dot dot--green"></i> Xanh lá &amp; <i class="dot dot--yellow"></i> Vàng</td>
+                  <td>Que kem nửa xanh lá ghép nửa vàng</td>
                 </tr>
               </tbody>
             </table>
           </article>
 
-          <div class="glass-card bento-svg gs-reveal">
-            <h3>Sơ đồ cấu tạo mô hình (SVG)</h3>
-            <svg viewBox="0 0 520 350" class="schematic-svg" role="img" aria-label="Sơ đồ cấu tạo mô hình DNA gồm khung carton nền xanh, viền xốp trắng, trục carton đứng, que kem đỏ-vàng và xanh dương-xanh lá xoay 30 đến 36 độ">
-              <rect x="70" y="18" width="176" height="314" rx="8" fill="rgba(40,215,242,0.12)" stroke="#B9E8F5" stroke-width="2"/>
-              <rect x="70" y="18" width="176" height="16" rx="3" fill="rgba(255,255,255,0.88)"/>
-              <rect x="70" y="316" width="176" height="16" rx="3" fill="rgba(255,255,255,0.88)"/>
-              <line x1="158" y1="34" x2="158" y2="316" stroke="#EAB308" stroke-width="4"/>
-              <g stroke-width="7" stroke-linecap="round">
-                <line x1="114" y1="64" x2="158" y2="64" stroke="#EF4444"/><line x1="158" y1="64" x2="202" y2="64" stroke="#FACC15"/>
-                <line x1="100" y1="92" x2="158" y2="92" stroke="#38BDF8"/><line x1="158" y1="92" x2="216" y2="92" stroke="#22C55E"/>
-                <line x1="102" y1="120" x2="158" y2="120" stroke="#FACC15"/><line x1="158" y1="120" x2="214" y2="120" stroke="#EF4444"/>
-                <line x1="122" y1="148" x2="158" y2="148" stroke="#22C55E"/><line x1="158" y1="148" x2="194" y2="148" stroke="#38BDF8"/>
-                <line x1="136" y1="176" x2="158" y2="176" stroke="#EF4444"/><line x1="158" y1="176" x2="180" y2="176" stroke="#FACC15"/>
-                <line x1="114" y1="204" x2="158" y2="204" stroke="#38BDF8"/><line x1="158" y1="204" x2="202" y2="204" stroke="#22C55E"/>
-                <line x1="100" y1="232" x2="158" y2="232" stroke="#FACC15"/><line x1="158" y1="232" x2="216" y2="232" stroke="#EF4444"/>
-                <line x1="108" y1="260" x2="158" y2="260" stroke="#22C55E"/><line x1="158" y1="260" x2="208" y2="260" stroke="#38BDF8"/>
-                <line x1="122" y1="288" x2="158" y2="288" stroke="#EF4444"/><line x1="158" y1="288" x2="194" y2="288" stroke="#FACC15"/>
+          <div class="ink-card svg-card gs-reveal">
+            <div class="svg-card-head">
+              <h3>Bản vẽ đối chiếu mô hình Nhóm 4</h3>
+              <span class="badge-mini">Slide 05 &amp; 06</span>
+            </div>
+            <svg viewBox="0 0 540 360" class="nhom4-svg" role="img" aria-label="Sơ đồ mô hình Nhóm 4: khung carton nền vàng, dải chữ A T G C trên đầu, chữ D N A nền vàng, trục dây kẽm giữa, que kem Đỏ-Xanh dương và Xanh lá-Vàng, hạt đất sét trắng và 4 ô màu ở đế">
+              <!-- Khung nền vàng & thanh đầu xốp trắng -->
+              <rect x="48" y="40" width="212" height="252" rx="4" fill="#EAB308" stroke="#0F172A" stroke-width="2"/>
+              <rect x="44" y="20" width="220" height="22" rx="2" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+              <!-- Đế trắng & 4 ô màu chú thích -->
+              <polygon points="48,292 260,292 278,342 30,342" fill="#FFFFFF" stroke="#0F172A" stroke-width="2"/>
+              <rect x="64" y="302" width="42" height="14" fill="#EF4444" stroke="#0F172A" stroke-width="1"/>
+              <rect x="112" y="302" width="42" height="14" fill="#2563EB" stroke="#0F172A" stroke-width="1"/>
+              <rect x="64" y="320" width="42" height="14" fill="#EAB308" stroke="#0F172A" stroke-width="1"/>
+              <rect x="112" y="320" width="42" height="14" fill="#16A34A" stroke="#0F172A" stroke-width="1"/>
+              <!-- Chữ đất sét A T G C trên nóc -->
+              <g font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="18" text-anchor="middle">
+                <text x="82" y="37" fill="#EF4444">A</text>
+                <text x="128" y="37" fill="#2563EB">T</text>
+                <text x="176" y="37" fill="#16A34A">G</text>
+                <text x="224" y="37" fill="#D97706">C</text>
               </g>
-              <path d="M114 64 C88 102, 228 146, 202 204 C188 240, 93 262, 122 288" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="2.4"/>
-              <path d="M202 64 C228 102, 88 146, 114 204 C128 240, 223 262, 194 288" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="2.4"/>
-              <g fill="#FFFFFF" stroke="#071426" stroke-width="1">
-                <circle cx="114" cy="64" r="5.5"/><circle cx="202" cy="64" r="5.5"/>
-                <circle cx="100" cy="92" r="5.5"/><circle cx="216" cy="92" r="5.5"/>
-                <circle cx="102" cy="120" r="5.5"/><circle cx="214" cy="120" r="5.5"/>
-                <circle cx="122" cy="148" r="5.5"/><circle cx="194" cy="148" r="5.5"/>
-                <circle cx="136" cy="176" r="5.5"/><circle cx="180" cy="176" r="5.5"/>
-                <circle cx="114" cy="204" r="5.5"/><circle cx="202" cy="204" r="5.5"/>
-                <circle cx="100" cy="232" r="5.5"/><circle cx="216" cy="232" r="5.5"/>
-                <circle cx="108" cy="260" r="5.5"/><circle cx="208" cy="260" r="5.5"/>
-                <circle cx="122" cy="288" r="5.5"/><circle cx="194" cy="288" r="5.5"/>
+              <!-- Chữ D N A nền vàng -->
+              <text x="74" y="102" font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="28" fill="#EF4444" stroke="#0F172A" stroke-width="0.8">D</text>
+              <text x="224" y="108" font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="28" fill="#2563EB" stroke="#0F172A" stroke-width="0.8">A</text>
+              <!-- Hai thanh xiên chống hai bên -->
+              <line x1="68" y1="150" x2="68" y2="292" stroke="#D4A373" stroke-width="4"/>
+              <line x1="240" y1="150" x2="240" y2="292" stroke="#D4A373" stroke-width="4"/>
+              <!-- Trục dây kẽm đứng ở giữa -->
+              <line x1="154" y1="42" x2="154" y2="296" stroke="#475569" stroke-width="2.5" stroke-dasharray="5 3"/>
+              <!-- Các thanh que kem nửa Đỏ-Xanh dương & Xanh lá-Vàng -->
+              <g stroke-width="6.5" stroke-linecap="round">
+                <line x1="112" y1="68" x2="154" y2="68" stroke="#EF4444"/><line x1="154" y1="68" x2="196" y2="68" stroke="#2563EB"/>
+                <line x1="98" y1="98" x2="154" y2="98" stroke="#16A34A"/><line x1="154" y1="98" x2="210" y2="98" stroke="#EAB308"/>
+                <line x1="106" y1="128" x2="154" y2="128" stroke="#2563EB"/><line x1="154" y1="128" x2="202" y2="128" stroke="#EF4444"/>
+                <line x1="126" y1="158" x2="154" y2="158" stroke="#EAB308"/><line x1="154" y1="158" x2="182" y2="158" stroke="#16A34A"/>
+                <line x1="112" y1="188" x2="154" y2="188" stroke="#EF4444"/><line x1="154" y1="188" x2="196" y2="188" stroke="#2563EB"/>
+                <line x1="98" y1="218" x2="154" y2="218" stroke="#16A34A"/><line x1="154" y1="218" x2="210" y2="218" stroke="#EAB308"/>
+                <line x1="110" y1="248" x2="154" y2="248" stroke="#2563EB"/><line x1="154" y1="248" x2="198" y2="248" stroke="#EF4444"/>
+                <line x1="126" y1="276" x2="154" y2="276" stroke="#EAB308"/><line x1="154" y1="276" x2="182" y2="276" stroke="#16A34A"/>
               </g>
-              <g stroke="#28D7F2" stroke-width="1.2" stroke-dasharray="3 3">
-                <line x1="246" y1="26" x2="274" y2="26"/>
-                <line x1="246" y1="74" x2="274" y2="74"/>
-                <line x1="158" y1="138" x2="274" y2="138"/>
-                <line x1="216" y1="232" x2="274" y2="202"/>
-                <line x1="202" y1="204" x2="274" y2="260"/>
+              <!-- Dải mạch ngoài và các viên cầu đất sét trắng -->
+              <path d="M112 68 C82 110, 226 146, 196 188 C178 214, 88 232, 126 276" fill="none" stroke="#1E293B" stroke-width="2.4"/>
+              <path d="M196 68 C226 110, 82 146, 112 188 C130 214, 220 232, 182 276" fill="none" stroke="#1E293B" stroke-width="2.4"/>
+              <g fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5">
+                <circle cx="112" cy="68" r="5"/><circle cx="196" cy="68" r="5"/>
+                <circle cx="98" cy="98" r="5"/><circle cx="210" cy="98" r="5"/>
+                <circle cx="106" cy="128" r="5"/><circle cx="202" cy="128" r="5"/>
+                <circle cx="126" cy="158" r="5"/><circle cx="182" cy="158" r="5"/>
+                <circle cx="112" cy="188" r="5"/><circle cx="196" cy="188" r="5"/>
+                <circle cx="98" cy="218" r="5"/><circle cx="210" cy="218" r="5"/>
+                <circle cx="110" cy="248" r="5"/><circle cx="198" cy="248" r="5"/>
+                <circle cx="126" cy="276" r="5"/><circle cx="182" cy="276" r="5"/>
               </g>
-              <g fill="#FFFFFF" font-size="11.5" font-weight="600">
-                <text x="280" y="30">1. Viền xốp trắng</text>
-                <text x="280" y="78">2. Hộp carton nền xanh</text>
-                <text x="280" y="142">3. Trục carton cuộn đứng</text>
-                <text x="280" y="206">4. Hai mạch khung (1–1,5 cm)</text>
-                <text x="280" y="264">5. Que kem xoay 30°–36°</text>
+              <!-- Chú thích kỹ thuật bên phải -->
+              <g stroke="#0B4F8C" stroke-width="1.2" stroke-dasharray="4 3">
+                <line x1="264" y1="31" x2="298" y2="31"/>
+                <line x1="260" y1="84" x2="298" y2="84"/>
+                <line x1="154" y1="142" x2="298" y2="142"/>
+                <line x1="210" y1="218" x2="298" y2="206"/>
+                <line x1="274" y1="316" x2="298" y2="270"/>
+              </g>
+              <g fill="#0F172A" font-family="Be Vietnam Pro, sans-serif" font-size="11.5" font-weight="600">
+                <text x="304" y="35">1. Hàng chữ đất sét A T G C</text>
+                <text x="304" y="88">2. Bảng carton sơn vàng &amp; chữ DNA</text>
+                <text x="304" y="146">3. Trục dây kẽm &amp; xiên que đỡ</text>
+                <text x="304" y="210">4. Que kem (Đỏ–Biển / Lá–Vàng)</text>
+                <text x="304" y="274">5. Đế trắng gắn 4 thẻ màu quy ước</text>
               </g>
             </svg>
           </div>
-
-          <div class="glass-card bento-notes gs-reveal">
-            <div class="bento-notes-head">
-              <h3>Tư liệu ghi chép thiết kế của Nhóm 4</h3>
-            </div>
-            <div class="notes-grid">
-              <figure class="note-card">
-                <button type="button" class="photo-trigger" data-open-lightbox="5" aria-label="Phóng to ảnh ghi chép thiết kế trang 1">
-                  <img src="assets/images/anh-06.jpg" alt="Chữ DNA nặn bằng đất sét của Nhóm 4" loading="lazy" decoding="async">
-                  <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-                </button>
-                <figcaption>Ghi chép trang 1: Ý tưởng thiết kế, vật liệu và quy ước màu sắc.</figcaption>
-              </figure>
-              <figure class="note-card">
-                <button type="button" class="photo-trigger" data-open-lightbox="6" aria-label="Phóng to ảnh ghi chép thiết kế trang 2">
-                  <img src="assets/images/anh-07.jpg" alt="Trang ghi chép viết tay của Nhóm 4 về cách tạo hình hai mạch khung và góc xoắn 30 đến 36 độ" width="460" height="1024" loading="lazy" decoding="async">
-                  <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-                </button>
-                <figcaption>Ghi chép trang 2: Cách uốn hai mạch khung và xoay bậc thang 30°–36°.</figcaption>
-              </figure>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         6. NGUYÊN LIỆU VÀ DỤNG CỤ (GALLERY BENTO ẢNH THẬT + LIGHTBOX)
-         ===================================================================== -->
-    <section class="section" id="materials" aria-labelledby="materials-title">
+    <!-- 4. NGUYÊN LIỆU & THƯ VIỆN ẢNH QUÁ TRÌNH (7 ẢNH THẬT NHÓM 4) -->
+    <section class="section section--sky" id="materials" aria-labelledby="materials-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">06 · Nguyên liệu &amp; dụng cụ</span>
-          <h2 id="materials-title" class="section-title">Vật liệu thực tế &amp; Thư viện ảnh quá trình</h2>
+          <div>
+            <span class="section-kicker">03 · Tư liệu thực hành · Slide 04 &amp; 07</span>
+            <h2 id="materials-title" class="section-title">Vật liệu sử dụng &amp; Ảnh quá trình làm mô hình</h2>
+          </div>
+          <p class="section-lead">Toàn bộ ảnh chụp thực tế các bước chuẩn bị bìa carton, nặn chữ đất sét, gắn súng bắn keo và hoàn thiện mô hình của Nhóm 4.</p>
         </header>
 
-        <div class="materials-list-grid gs-reveal">
-          <div class="glass-card mat-card">
-            <h3>Nguyên liệu chính (theo ảnh &amp; ghi chép Nhóm 4)</h3>
+        <div class="materials-duo">
+          <div class="ink-card mat-box gs-reveal">
+            <h3>Vật liệu chế tạo (theo Slide 04)</h3>
             <ul class="clean-list">
-              <li><strong>Que kem gỗ:</strong> làm thanh ngang các cặp base dọc trục (ảnh 1, 2, 3, 5).</li>
-              <li><strong>Đất sét khô 4 màu &amp; đất sét trắng:</strong> đỏ, vàng, xanh dương, xanh lá bọc cặp base và hạt trắng dọc mạch (ảnh 4, 5).</li>
-              <li><strong>Bìa / thùng carton tái chế:</strong> chân đế, trục đứng, hai dải mạch khung (1–1,5 cm) và khung hộp trưng bày (ảnh 2, 4, 5).</li>
-              <li><strong>Thanh xốp trắng:</strong> bo viền trên/dưới cho khung hộp (ảnh 1, 5).</li>
-              <li><strong>Súng bắn keo và keo nến:</strong> gắn trục, que kem và khung mạch.</li>
+              <li><strong>Thùng bìa, bìa giấy:</strong> tạo khung lưng sơn vàng, đế sơn trắng và 4 bảng quy ước màu.</li>
+              <li><strong>Que kem gỗ:</strong> tô bốn màu Đỏ, Xanh dương, Xanh lá, Vàng ghép từng cặp base bổ sung.</li>
+              <li><strong>Xiên que và dây kẽm:</strong> làm trục giữa giữ chuỗi xoắn và hai thanh đỡ bên khung.</li>
+              <li><strong>Màu nước và đất sét tự khô:</strong> nặn chuỗi cầu trắng dọc hai mạch, chữ DNA và dãy chữ A T G C.</li>
             </ul>
           </div>
-          <div class="glass-card mat-card">
-            <h3>Dụng cụ thực hiện</h3>
+
+          <div class="ink-card mat-box gs-reveal">
+            <h3>Dụng cụ gắn kết &amp; hoàn thiện</h3>
             <ul class="clean-list">
-              <li><strong>Bộ bút lông màu acrylic thân trắng:</strong> tô phân biệt màu các que gỗ (ảnh 1, 3).</li>
-              <li><strong>Bộ màu nước ("WATER COLOR") &amp; cọ vẽ:</strong> sơn lót nền trắng và nền xanh hộp trưng bày (ảnh 1, 2, 4).</li>
+              <li><strong>Súng bắn keo và keo nến:</strong> cố định chắc chắn các bậc que kem xoắn quanh trục dây kẽm và gắn viên đất sét trắng.</li>
+              <li><strong>Keo 502:</strong> gia cố mối nối giữa que gỗ, khung carton và các tấm thẻ chú thích màu sắc ở mặt đế.</li>
+              <li><strong>Cọ vẽ &amp; màu nước:</strong> phủ lớp sơn lót trắng và lớp nền vàng đồng bộ mặt khung trưng bày.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Bento Gallery 5 ảnh thật -->
-        <div class="gallery-bento" id="photo-gallery">
-          <figure class="photo-card photo-card--portrait gs-reveal" data-index="0">
-            <button type="button" class="photo-trigger" aria-label="Phóng to Ảnh 01: Bộ bút lông, que gỗ, thanh xốp và màu vẽ">
-              <img src="assets/images/anh-01.jpg" alt="Bộ bút lông nhiều màu, que gỗ, thanh xốp trắng, cọ vẽ và màu dùng chuẩn bị làm mô hình DNA" width="461" height="1024" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh 01 · Chuẩn bị</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-            </button>
-            <figcaption>Tập hợp bút lông màu, que gỗ, thanh xốp trắng, cọ và màu vẽ.</figcaption>
-          </figure>
-
-          <figure class="photo-card photo-card--wide gs-reveal" data-index="1">
-            <button type="button" class="photo-trigger" aria-label="Phóng to Ảnh 02: Sơn phủ khung hộp carton và tô màu que gỗ">
-              <img src="assets/images/anh-02.jpg" alt="Hai học sinh đang sơn phủ mặt trong khung hộp carton tái chế và tô màu que gỗ bằng cọ vẽ" width="1024" height="461" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh 02 · Gia công</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-            </button>
-            <figcaption>Gia công khung hộp carton tái chế và tô màu chi tiết.</figcaption>
-          </figure>
-
-          <figure class="photo-card photo-card--wide gs-reveal" data-index="2">
-            <button type="button" class="photo-trigger" aria-label="Phóng to Ảnh 03: Tô màu phân biệt que gỗ bằng bút lông acrylic">
-              <img src="assets/images/anh-03.jpg" alt="Tay học sinh cầm bút lông màu xanh lá tô lên que gỗ để phân biệt màu các cặp base" width="1024" height="461" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh 03 · Tô màu</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-            </button>
-            <figcaption>Tô màu phân biệt que gỗ bằng bút lông acrylic.</figcaption>
-          </figure>
-
-          <figure class="photo-card photo-card--wide gs-reveal" data-index="3">
-            <button type="button" class="photo-trigger" aria-label="Phóng to Ảnh 04: Khung hộp carton phủ trắng, màu Water Color và đất sét trắng">
-              <img src="assets/images/anh-04.jpg" alt="Khung hộp carton phủ trắng mặt trong đặt cạnh bộ màu Water Color và các túi đất sét khô màu trắng" width="1024" height="460" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh 04 · Vật liệu</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-            </button>
-            <figcaption>Khung hộp carton phủ trắng, bộ màu nước và đất sét khô trắng.</figcaption>
-          </figure>
-
-          <figure class="photo-card photo-card--standard gs-reveal" data-index="4">
-            <button type="button" class="photo-trigger" aria-label="Phóng to Ảnh 05: Nhóm 4 thuyết trình mô hình DNA hoàn chỉnh">
-              <img src="assets/images/anh-05.jpg" alt="Nhóm 4 lớp 9A4 trình bày mô hình cấu trúc phân tử DNA hoàn chỉnh trước màn hình STEM" width="1024" height="767" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh 05 · Hoàn thiện</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
-            </button>
-            <figcaption>Nhóm 4 trình bày mô hình DNA hoàn chỉnh trước lớp 9A4.</figcaption>
-          </figure>
-        </div>
+        <div class="gallery-grid-3col" id="photo-gallery" aria-label="Thư viện 7 ảnh thực tế của Nhóm 4"></div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         8. SẢN PHẨM HOÀN THIỆN (SPOTLIGHT LỚN)
-         ===================================================================== -->
+    <!-- 5. SẢN PHẨM HOÀN THIỆN -->
     <section class="section" id="product" aria-labelledby="product-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">08 · Sản phẩm hoàn thiện</span>
-          <h2 id="product-title" class="section-title">Thành quả thực tế của Nhóm 4</h2>
+          <div>
+            <span class="section-kicker">04 · Nghiệm thu mô hình · Slide 08–09</span>
+            <h2 id="product-title" class="section-title">Sản phẩm hoàn thiện của Nhóm 4</h2>
+          </div>
         </header>
 
-        <div class="glass-card product-spotlight gs-reveal">
-          <figure class="spotlight-media">
-            <button type="button" class="photo-trigger spotlight-trigger" data-open-lightbox="4" aria-label="Phóng to ảnh sản phẩm hoàn thiện">
-              <img src="assets/images/anh-05.jpg" alt="Nhóm 4 lớp 9A4 trình bày mô hình DNA hoàn chỉnh trước lớp" width="1024" height="767" loading="lazy" decoding="async">
-              <span class="photo-badge">Ảnh thật báo cáo trên lớp</span>
-              <span class="zoom-pill" aria-hidden="true">Phóng to</span>
+        <div class="ink-card product-showcase gs-reveal">
+          <figure class="product-photo">
+            <button type="button" class="photo-trigger" data-open-lightbox="4" aria-label="Phóng to ảnh tập thể Nhóm 4 cùng sản phẩm DNA">
+              <img src="assets/images/anh-05.jpg" alt="Tập thể 6 học sinh Nhóm 4 lớp 9A4 chụp cùng mô hình DNA nền vàng hoàn chỉnh trên lớp" width="1024" height="414" loading="lazy" decoding="async">
+              <span class="photo-pill">Tập thể Nhóm 4 · Lớp 9A4</span>
+              <span class="zoom-tag">Phóng to</span>
             </button>
           </figure>
 
-          <div class="spotlight-info">
-            <h3>Các chi tiết quan sát rõ trên mô hình</h3>
+          <div class="product-summary">
+            <h3>Điểm nổi bật dễ quan sát trên mô hình</h3>
             <ul class="clean-list">
-              <li><strong>Khung hộp đứng &amp; viền xốp trắng:</strong> hộp carton sơn nền xanh dương nhạt, bo viền xốp trắng ở hai đầu.</li>
-              <li><strong>Trục thẳng ở tâm:</strong> giữ cố định chuỗi bậc thang xoắn theo phương đứng.</li>
-              <li><strong>Các thanh màu bắt cặp:</strong> que gỗ phân hai nửa màu đỏ–vàng (A–T) và xanh dương–xanh lá (G–C) xoay xoắn đều.</li>
-              <li><strong>Chuỗi hạt trắng hai bên:</strong> gắn dọc theo hai dải xoắn đối xứng bên ngoài.</li>
+              <li><strong>Khung nền vàng chữ nổi:</strong> bảng lưng carton sơn vàng gắn chữ D N A đất sét nhiều họa tiết cùng dãy chữ A T G C trên đỉnh.</li>
+              <li><strong>Chuỗi xoắn quanh trục dây kẽm:</strong> các bậc que kem xoay xoắn phải giữ dáng cân đối nhờ dây kẽm trung tâm.</li>
+              <li><strong>Màu cặp base đúng quy ước Slide 05:</strong> cặp A–T nửa Đỏ–Xanh dương, cặp G–C nửa Xanh lá–Vàng nối liền nhau.</li>
+              <li><strong>Bảng chú thích trực quan dưới đế:</strong> gắn 4 tấm bìa màu Đỏ, Xanh dương, Vàng, Xanh lá ngay trên chân đế sơn trắng.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================================================================
-         10. BÀI THUYẾT TRÌNH — "SÂN KHẤU" PPTX (16:9 + PRELOAD + HASH + POINTER SWIPE)
-         ===================================================================== -->
-    <section class="section" id="presentation" aria-labelledby="presentation-title">
+    <!-- 6. TRÌNH CHIẾU SLIDE POWERPOINT (10 SLIDE + THUMBNAIL NGANG) -->
+    <section class="section section--sky" id="presentation" aria-labelledby="presentation-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">10 · Sân khấu bài thuyết trình</span>
-          <h2 id="presentation-title" class="section-title">Xem slide PowerPoint &amp; Tải file gốc</h2>
+          <div>
+            <span class="section-kicker">05 · Bài báo cáo PowerPoint · 10 slide</span>
+            <h2 id="presentation-title" class="section-title">Xem slide thuyết trình &amp; Tải tệp gốc</h2>
+          </div>
+          <p class="section-lead">Chuyển từng slide bằng phím mũi tên, nút hai bên hoặc chạm vuốt trên điện thoại.</p>
         </header>
 
-        <!-- Chế độ thay thế khi dán EMBED_URL -->
         <div class="embed-host" id="embed-host" hidden>
-          <div class="embed-header">
-            <span>Đang trình chiếu qua liên kết nhúng trực tuyến</span>
-          </div>
           <div class="embed-frame-wrap">
-            <iframe id="slide-embed-frame" title="Bài thuyết trình PowerPoint nhúng" allowfullscreen></iframe>
+            <iframe id="slide-embed-frame" title="Bài thuyết trình PowerPoint Nhóm 4" allowfullscreen></iframe>
           </div>
         </div>
 
-        <div class="glass-card viewer-stage-shell gs-reveal" id="slide-viewer" tabindex="0" aria-label="Trình xem slide bài thuyết trình">
+        <div class="ink-card slide-shell gs-reveal" id="slide-viewer" tabindex="0" aria-label="Trình xem 10 slide PowerPoint Nhóm 4">
           <div class="viewer-bar">
-            <div class="viewer-title-group">
+            <div class="viewer-meta">
               <span class="counter-pill" id="slide-counter" aria-live="polite">1 / 10</span>
-              <h3 id="slide-current-title">Slide 01</h3>
+              <h3 class="slide-title" id="slide-current-title">1. THIẾT KẾ MÔ HÌNH CẤU TRÚC PHÂN TỬ DNA TỪ VẬT LIỆU ĐƠN GIẢN</h3>
             </div>
-            <div class="viewer-controls-right">
-              <span class="viewer-hint">Phím ← → Home End · Vuốt trên di động</span>
-              <button type="button" class="tool-btn" id="slide-fullscreen-btn" aria-label="Toàn màn hình">
-                <svg viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><path d="M3 7V3h4M17 7V3h-4M3 13v4h4M17 13v4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>Toàn màn hình</span>
-              </button>
-            </div>
+            <button type="button" class="tool-btn" id="slide-fullscreen-btn">Toàn màn hình</button>
           </div>
 
           <div class="slide-viewport" id="slide-viewport">
-            <img id="slide-main-img" class="slide-main-img" src="assets/slides/slide-01.jpg" alt="Slide 1 của bài thuyết trình Mô hình DNA">
+            <img id="slide-main-img" class="slide-main-img" src="assets/slides/slide-01.jpg" alt="Slide 1 của bài thuyết trình Nhóm 4">
 
             <div class="slide-fallback" id="slide-fallback" hidden>
-              <div class="fallback-content">
-                <span class="pill-badge pill-badge--cyan" id="fallback-badge">Slide 01 / 10</span>
-                <h4 id="fallback-title">1. MÔ HÌNH DNA — Khám phá cấu trúc phân tử của sự sống</h4>
-                <p>
-                  Chưa có ảnh slide tại <code id="fallback-path">assets/slides/slide-01.jpg</code>.
-                  Vui lòng xuất PowerPoint thành ảnh JPG (16:9) vào thư mục <code>assets/slides/</code> hoặc tải trực tiếp file thuyết trình gốc bên dưới.
-                </p>
-                <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-primary">
-                  <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M10 3v9m0 0l-3.5-3.5M10 12l3.5-3.5M4 15.5h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Tải file PPTX ngay</span>
-                </a>
+              <div class="fallback-box">
+                <span class="badge-mini" id="fallback-badge">Slide 01 / 10</span>
+                <h4 id="fallback-title">1. THIẾT KẾ MÔ HÌNH CẤU TRÚC PHÂN TỬ DNA TỪ VẬT LIỆU ĐƠN GIẢN</h4>
+                <p>Không tìm thấy ảnh tại <code id="fallback-path">assets/slides/slide-01.jpg</code>. Bạn có thể tải tệp PowerPoint gốc bên dưới.</p>
+                <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-cobalt">Tải file PPTX</a>
               </div>
             </div>
 
-            <button type="button" class="slide-nav-btn slide-nav-btn--prev" id="slide-prev-btn" aria-label="Slide trước">
-              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="button" class="slide-arrow slide-arrow--prev" id="slide-prev-btn" aria-label="Slide trước">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
-            <button type="button" class="slide-nav-btn slide-nav-btn--next" id="slide-next-btn" aria-label="Slide tiếp theo">
-              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <button type="button" class="slide-arrow slide-arrow--next" id="slide-next-btn" aria-label="Slide tiếp theo">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
           </div>
 
@@ -538,119 +432,114 @@
             <div class="slide-progress-fill" id="slide-progress-fill"></div>
           </div>
 
-          <div class="slide-thumbs" id="slide-thumbs" role="list" aria-label="Danh sách thumbnail các slide"></div>
+          <div class="slide-thumbs" id="slide-thumbs" role="list" aria-label="Danh sách 10 slide"></div>
         </div>
 
-        <!-- Nút tải PPTX nổi bật & nút phụ PDF -->
-        <div class="download-hub gs-reveal">
-          <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="dl-card dl-card--primary">
-            <div class="dl-badge" aria-hidden="true">PPTX</div>
-            <div class="dl-copy">
-              <span class="dl-kicker">Tài liệu PowerPoint chính thức cho giáo viên</span>
-              <strong class="dl-title">Tải file PPTX</strong>
-              <span class="dl-meta"><code>NHOM 4_9A4_STEM THANH PHO.pptx</code> · PowerPoint (.pptx) · 38,2 MB (10 slide)</span>
-            </div>
-            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 4v12m0 0l-4.5-4.5M12 16l4.5-4.5M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
+        <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="dl-banner gs-reveal">
+          <span class="dl-ext" aria-hidden="true">PPTX</span>
+          <div class="dl-info">
+            <strong>Tải bài thuyết trình PowerPoint chính thức của Nhóm 4</strong>
+            <span><code>NHOM 4_9A4_STEM THANH PHO.pptx</code> · 4,1 MB · 10 slide đầy đủ</span>
+          </div>
+          <span class="dl-cta">Tải xuống ngay</span>
+        </a>
       </div>
     </section>
 
-    <!-- =====================================================================
-         11. NHÓM THỰC HIỆN (6 THÀNH VIÊN NHÓM 2 LỚP 9A4 + GVHD)
-         ===================================================================== -->
-    <section class="section section--alt" id="team" aria-labelledby="team-title">
+    <!-- 7. THÀNH VIÊN NHÓM 4 (Cột bảng danh sách + Thẻ đơn vị nền Cobalt) -->
+    <section class="section" id="team" aria-labelledby="team-title">
       <div class="container">
         <header class="section-header gs-reveal">
-          <span class="section-tag">11 · Nhóm thực hiện</span>
-          <h2 id="team-title" class="section-title">Nhóm 4 — Lớp 9A4</h2>
-          <p class="section-lead">Trường THCS Hội Nghĩa · Năm học 2026–2027</p>
+          <div>
+            <span class="section-kicker">06 · Phân công nhiệm vụ · Slide 02</span>
+            <h2 id="team-title" class="section-title">Thành viên Nhóm 4 — Lớp 9A4</h2>
+          </div>
+          <p class="section-lead">Trường THCS Hội Nghĩa · Môn Khoa học tự nhiên lớp 9 · Giáo viên hướng dẫn: Đỗ Thị Tuyết Ngân.</p>
         </header>
 
-        <div class="glass-card roster-bar gs-reveal">
-          <div><span class="roster-lbl">Trường</span><strong>Trường THCS Hội Nghĩa</strong></div>
-          <div><span class="roster-lbl">Lớp &amp; Nhóm</span><strong>Lớp 9A4 · Nhóm 4</strong></div>
-          <div><span class="roster-lbl">Năm học</span><strong>2026 – 2027</strong></div>
-          <div><span class="roster-lbl">Giáo viên hướng dẫn</span><strong>Đỗ Thị Tuyết Ngân</strong></div>
+        <div class="team-banner ink-card gs-reveal">
+          <div class="team-banner-item"><span>Đơn vị</span><strong>Trường THCS Hội Nghĩa</strong></div>
+          <div class="team-banner-item"><span>Lớp · Nhóm</span><strong>Lớp 9A4 · Nhóm 4</strong></div>
+          <div class="team-banner-item"><span>Năm học</span><strong>2026 – 2027</strong></div>
+          <div class="team-banner-item"><span>GV hướng dẫn</span><strong>Đỗ Thị Tuyết Ngân</strong></div>
         </div>
 
-        <div class="team-cards-grid gs-reveal">
-          <article class="glass-card member-card">
-            <span class="member-num">01</span>
-            <h3>Lê Minh Trí</h3>
-            <span class="member-role">Chuẩn bị vật liệu</span>
-          </article>
-          <article class="glass-card member-card">
-            <span class="member-num">02</span>
-            <h3>Lê Vũ Quốc Thiện</h3>
-            <span class="member-role">Lắp ráp mô hình</span>
-          </article>
-          <article class="glass-card member-card">
-            <span class="member-num">03</span>
-            <h3>Trần Hiếu Trung</h3>
-            <span class="member-role">Lắp ráp mô hình</span>
-          </article>
-          <article class="glass-card member-card">
-            <span class="member-num">04</span>
-            <h3>Dương Trường Thịnh</h3>
-            <span class="member-role">Ghi chép và đánh giá</span>
-          </article>
-          <article class="glass-card member-card">
-            <span class="member-num">05</span>
-            <h3>Nguyễn Hữu Tấn</h3>
-            <span class="member-role">Kiểm tra và chỉnh sửa</span>
-          </article>
-          <article class="glass-card member-card">
-            <span class="member-num">06</span>
-            <h3>Nguyễn Xuân Hùng</h3>
-            <span class="member-role">Thuyết trình</span>
-          </article>
-        </div>
+        <ul class="roster-grid gs-reveal" aria-label="6 thành viên Nhóm 4">
+          <li class="ink-card roster-item">
+            <span class="roster-idx">01</span>
+            <div class="roster-info">
+              <strong>Lê Minh Trí</strong>
+              <span>Chuẩn bị vật liệu</span>
+            </div>
+          </li>
+          <li class="ink-card roster-item">
+            <span class="roster-idx">02</span>
+            <div class="roster-info">
+              <strong>Lê Vũ Quốc Thiện</strong>
+              <span>Lắp ráp mô hình</span>
+            </div>
+          </li>
+          <li class="ink-card roster-item">
+            <span class="roster-idx">03</span>
+            <div class="roster-info">
+              <strong>Trần Hiếu Trung</strong>
+              <span>Lắp ráp mô hình</span>
+            </div>
+          </li>
+          <li class="ink-card roster-item">
+            <span class="roster-idx">04</span>
+            <div class="roster-info">
+              <strong>Dương Trường Thịnh</strong>
+              <span>Ghi chép và đánh giá</span>
+            </div>
+          </li>
+          <li class="ink-card roster-item">
+            <span class="roster-idx">05</span>
+            <div class="roster-info">
+              <strong>Nguyễn Hữu Tấn</strong>
+              <span>Kiểm tra và chỉnh sửa</span>
+            </div>
+          </li>
+          <li class="ink-card roster-item">
+            <span class="roster-idx">06</span>
+            <div class="roster-info">
+              <strong>Nguyễn Xuân Hùng</strong>
+              <span>Thuyết trình</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- =====================================================================
-         12. KẾT ("DNA – NỀN TẢNG CỦA SỰ SỐNG" CỠ LỚN + HELIX MỜ PHÍA SAU)
-         ===================================================================== -->
+    <!-- 8. KẾT BÀI -->
     <section class="section ending-section" id="ending" aria-labelledby="ending-title">
       <canvas id="ending-dna-canvas" class="ending-canvas" aria-hidden="true"></canvas>
       <div class="container ending-inner gs-reveal">
-        <span class="section-tag">12 · Thông điệp kết</span>
+        <span class="badge-tag badge-tag--amber">Thank you for watching · Slide 10</span>
         <h2 id="ending-title" class="ending-motto">“DNA – nền tảng của sự sống”</h2>
-        <p class="ending-sub">Cảm ơn quý thầy cô và các bạn đã theo dõi phần trình bày dự án STEM của Nhóm 4 – Lớp 9A4.</p>
+        <p class="ending-sub">Cảm ơn quý thầy cô và các bạn đã theo dõi phần trình bày sản phẩm STEM của Nhóm 4, lớp 9A4, Trường THCS Hội Nghĩa.</p>
         <div class="ending-actions">
-          <a href="#presentation" class="btn btn-secondary">Xem lại bài thuyết trình</a>
-          <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-primary">Tải file PPTX</a>
+          <a href="#presentation" class="btn btn-outline-white">Xem lại slide</a>
+          <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="btn btn-amber-solid">Tải file PPTX</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-row">
-      <p>Dự án STEM: Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản · KHTN Lớp 9 · Nhóm 4 – Lớp 9A4 · Trường THCS Hội Nghĩa (2026–2027)</p>
-      <nav class="footer-links" aria-label="Điều hướng chân trang">
+      <p>Thiết kế mô hình cấu trúc phân tử DNA từ vật liệu đơn giản · Nhóm 4 – Lớp 9A4 · Trường THCS Hội Nghĩa (2026–2027)</p>
+      <nav class="footer-links" aria-label="Điều hướng cuối trang">
         <a href="#hero">Đầu trang</a>
-        <a href="#structure">Cấu trúc DNA</a>
-        <a href="#materials">Ảnh thực tế</a>
-        <a href="#presentation">Bài thuyết trình</a>
+        <a href="#structure">Cấu trúc</a>
+        <a href="#design">Thiết kế</a>
+        <a href="#materials">Ảnh quá trình</a>
+        <a href="#presentation">Slide</a>
       </nav>
     </div>
   </footer>
 
-  <!-- Nút tải nhanh thu gọn ở góc màn hình -->
-  <div class="floating-dock" id="floating-dock" aria-label="Tải nhanh bài thuyết trình">
-    <a href="#presentation" class="dock-jump" title="Tới khu vực xem slide" aria-label="Tới khu vực xem slide">
-      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><rect x="2" y="3.5" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><polygon points="8.5,6.8 13,9 8.5,11.2" fill="currentColor"/></svg>
-    </a>
-    <a href="assets/files/NHOM%204_9A4_STEM%20THANH%20PHO.pptx" download class="dock-download">
-      <svg viewBox="0 0 20 20" width="17" height="17" aria-hidden="true"><path d="M10 3v9m0 0l-3.5-3.5M10 12l3.5-3.5M4 15.5h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span>Tải PPTX</span>
-    </a>
-  </div>
-
-  <!-- Lightbox phóng to ảnh (Focus trap + Esc + ArrowLeft/Right + Pointer Swipe) -->
+  <!-- Lightbox phóng to ảnh -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
     <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
     <div class="lightbox-dialog" id="lightbox-dialog">
@@ -658,30 +547,27 @@
         <span class="lightbox-counter" id="lightbox-counter">1 / 7</span>
         <div class="lightbox-actions">
           <button type="button" class="lb-btn" id="lightbox-zoom-btn" aria-pressed="false">Phóng to 1.5×</button>
-          <button type="button" class="lb-btn" id="lightbox-close-btn" aria-label="Đóng hộp xem ảnh (Esc)">
-            <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
+          <button type="button" class="lb-btn" id="lightbox-close-btn" aria-label="Đóng hộp xem ảnh">Đóng</button>
         </div>
       </header>
       <div class="lightbox-stage" id="lightbox-stage">
         <button type="button" class="lb-arrow lb-arrow--prev" id="lightbox-prev-btn" aria-label="Ảnh trước">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="lightbox-img-box">
           <img id="lightbox-img" src="" alt="">
         </div>
         <button type="button" class="lb-arrow lb-arrow--next" id="lightbox-next-btn" aria-label="Ảnh tiếp theo">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
       <footer class="lightbox-footer">
         <p id="lightbox-caption"></p>
-        <span>Phím ← / → để chuyển ảnh · Esc để đóng · Vuốt trên di động</span>
+        <span>Phím ← / → để chuyển ảnh · Esc để đóng</span>
       </footer>
     </div>
   </div>
 
-  <!-- GSAP 3.12.5 + ScrollTrigger (cdnjs, ghim phiên bản, có fallback trong main.js nếu offline) -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="js/main.js"></script>
